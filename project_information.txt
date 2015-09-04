@@ -6,6 +6,7 @@ Source:	New source only; no adaptations.
 Requirements: None
 Notes:
 * Assignment Page: https://canvas.harvard.edu/courses/4290/assignments/33152
+* Repo Page: https://github.com/oatmealandcoffee/zombietranslator
 
 Bugs:
 *
