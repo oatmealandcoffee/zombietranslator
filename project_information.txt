@@ -1,0 +1,32 @@
+Project: CSCIE32 Assignment 1: Zombie Translator
+Author(s): Philip Regan
+Source Code Copyright: Copyright (c) 2015 Philip Regan All Rights Reserved.
+Additional Copyright: None
+Source:	New source only; no adaptations.
+Requirements: None
+Notes:
+* Assignment Page: https://canvas.harvard.edu/courses/4290/assignments/33152
+
+Bugs:
+*
+
+Roadmap:
+* Get input to translation functions
+* Set output to input fields
+* Create 10 rules for English to Zombie
+  * lower-case "r" at the end of words replaced with "rh".
+  * an "a" or "A" by itself will be replaced with "hra".
+  * the starts of sentences are capitalised (the "start of a sentence" is any occurrence of ".!?", followed by a space, followed by a letter.)
+  * "e" or "E" is replaced by "rr"
+  * "i" or "I" is replaced by "rrRr"
+  * "o" or "O" is replaced by "rrrRr"
+  * "u" or "U" is replaced by "rrrrRr"
+  * "r" or "R' is replaced by "RR"
+  * <create new> "y" or "Y" is replaced by "rrRhr"
+  * <create new> "z" or "Z" is replaced by "hh"
+* Create 3 different jasmine "expect" methods per rule.
+  * http://jasmine.github.io/2.3/introduction.html
+* Extra Credit: same as above for Zombie to English
+
+Change History:
+    15_09_04_01_00_000: Started source
