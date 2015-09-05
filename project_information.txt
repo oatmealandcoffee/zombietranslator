@@ -34,3 +34,5 @@ Change History:
     15_09_04_01_00_000: Started source
     15_09_05_01_01_000: Added get and set between the text inputs
     15_09_05_01_02_000: Added routing to translation functions
+
+    git commit -a -m "updated_project_info"; git push origin master
