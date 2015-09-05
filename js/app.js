@@ -1,19 +1,22 @@
 $(document).ready(function(){
   $('#zombie-to-english-btn').click(function(event){
       var zb = $('#zombie').val();
+      var en = unzombify(zb);
       $('#zombie').val('');
-      $('#english').val(zb);
+      $('#english').val(en);
     return false;
   });
 
   $('#english-to-zombie-btn').click(function(event){
       var en = $('#english').val();
+      var zb = zombify(en);
       $('#english').val('');
-      $('#zombie').val(en);
+      $('#zombie').val(zb);
     return false;
   });
 
-  function zombify(){
+  function zombify(en){
+      return en;
     // 1. lower-case "r" at the end of words replaced with "rh".
     // 2. an "a" or "A" by itself will be replaced with "hra".
     // 3. the starts of sentences are capitalised (the "start of a sentence" is any occurrence of
@@ -25,8 +28,8 @@ $(document).ready(function(){
     // 8. "r" or "R' is replaced by "RR"
   }
 
-  function unzombify(){
-
+  function unzombify(zb){
+      return zb;
 
   }
 
