@@ -7,6 +7,7 @@ Requirements: None
 Notes:
 * Assignment Page: https://canvas.harvard.edu/courses/4290/assignments/33152
 * Repo Page: https://github.com/oatmealandcoffee/zombietranslator
+* Jasmine Tests need to be run with Karma on RequireJS modules.
 
 Bugs:
 *
@@ -31,3 +32,4 @@ Roadmap:
 
 Change History:
     15_09_04_01_00_000: Started source
+    15_09_05_01_01_000: Added get and set between the text inputs

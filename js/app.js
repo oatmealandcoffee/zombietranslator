@@ -1,11 +1,15 @@
 $(document).ready(function(){
   $('#zombie-to-english-btn').click(function(event){
-
+      var zb = $('#zombie').val();
+      $('#zombie').val('');
+      $('#english').val(zb);
     return false;
   });
 
   $('#english-to-zombie-btn').click(function(event){
-
+      var en = $('#english').val();
+      $('#english').val('');
+      $('#zombie').val(en);
     return false;
   });
 
