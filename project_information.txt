@@ -10,16 +10,14 @@ Notes:
 * Jasmine Tests need to be run with Karma on RequireJS modules.
 
 Bugs:
-* brown     bRRrrrRrwn          buwn
-* strong    stRRrrrRrng         stung
-* product   pRRrrrRrdrrrrRrct   puduct
-* improves  rrRrmpRRrrrRrvrrs   impuves
-* rob       RRrrrRrb            ub
-* friends   fRRrrRrrrnds        foends
-* ripe      RRrrRrprr           ope
-* break     bRRrrak             berak
-* great     gRRrrat             gerat
-* rae rou
+* Translation getting stuck in an endless loop when regex not global
+    * test for location of token
+    * if location != 1, fix the token, capture the location of the fix
+* Unzombify is having a hard time with certain combinations of letter because the regex will replace on the first occurrence and not necessarilly the correct one.
+    * e2z   /[Rr]/g:    break       bRReak  /[Ee]/g:    bRRrrak
+    * z2e   /(RR)/g:    bRRrrak     brrrak  /(rrRr)/g:  berak
+    * e2z   /[Rr]/g:    three       thRRee  /[Ee]/g:    thRRrrrr
+    * z2e   /(RR)/g:    thRRrrrr    thrrrrr /(rr)/g:    theer
 
 Roadmap:
 X Get input to translation functions
@@ -51,5 +49,6 @@ Change History:
     15_09_05_01_02_000: Added routing to translation functions
     15_09_05_01_03_000: Added initial two-way translation
     15_09_05_01_04_000: Added automated two-way translation testing
-
-    git commit -a -m "Added automated two-way translation testing"; git push origin master
+    15_09_05_01_05_000: Updated regexes in tokens to no longer be global; now stop on first hit; Updated translation to replace individual hits; Fixed translation bugs
+    15_09_05_01_05_001: Updated reporting to console to aid testing
+    cd ~/cscie32/zombietranslator; git commit -a -m "Updated reporting to console to aid testing"; git push origin master
