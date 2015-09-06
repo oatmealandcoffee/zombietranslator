@@ -1,36 +1,54 @@
 $(document).ready(function(){
-  $('#zombie-to-english-btn').click(function(event){
-      var zb = $('#zombie').val();
-      var en = unzombify(zb);
-      $('#zombie').val('');
-      $('#english').val(en);
+
+
+    var tokens = [
+        { en:'. ',  enr:/(.\s)$/g,    zb:'.!? ',      zbr:/(.!?\s)$/g },
+        { en:'r',   enr:/[r$]/g,        zb:' rh ',        zbr:/[(rh)$]/g },
+        { en:'r',   enr:/[Rr]/g,        zb:' RR ',        zbr:/(\sRR\s)/g },
+        { en:'a',   enr:/(\s[Aa]\s)/g,  zb:' hra ',       zbr:/(\shra\s)/g },
+        { en:'e',   enr:/[Ee]/g,        zb:' rr ',        zbr:/(\srr\s)/g },
+        { en:'i',   enr:/[Ii]/g,        zb:' rrRr ',      zbr:/(\srrRr\s)/g },
+        { en:'o',   enr:/[Oo]/g,        zb:' rrrRr ',     zbr:/(\srrrRr\s)/g },
+        { en:'u',   enr:/[Uu]/g,        zb:' rrrrRr ',    zbr:/(\srrrrRr\s)/g },
+        { en:'y',   enr:/[Yy]/g,        zb:' rrRhr ',     zbr:/(\srrRhr\s)/g },
+        { en:'z',   enr:/[Zz]/g,        zb:' HH ',        zbr:/(\sHH\s)/g },
+    ];
+
+    $('#english-to-zombie-btn').click(function(event){
+        var en = $('#english').val();
+        var zb = zombify(en);
+        $('#english').val('');
+        $('#zombie').val(zb);
     return false;
-  });
+    });
 
-  $('#english-to-zombie-btn').click(function(event){
-      var en = $('#english').val();
-      var zb = zombify(en);
-      $('#english').val('');
-      $('#zombie').val(zb);
+    $('#zombie-to-english-btn').click(function(event){
+        var zb = $('#zombie').val();
+        var en = unzombify(zb);
+        $('#zombie').val('');
+        $('#english').val(en);
     return false;
-  });
+    });
 
-  function zombify(en){
-      return en;
-    // 1. lower-case "r" at the end of words replaced with "rh".
-    // 2. an "a" or "A" by itself will be replaced with "hra".
-    // 3. the starts of sentences are capitalised (the "start of a sentence" is any occurrence of
-    //   ".!?", followed by a space, followed by a letter.)
-    // 4. "e" or "E" is replaced by "rr"
-    // 5. "i" or "I" is replaced by "rrRr"
-    // 6. "o" or "O" is replaced by "rrrRr"
-    // 7. "u" or "U" is replaced by "rrrrRr"
-    // 8. "r" or "R' is replaced by "RR"
-  }
+    function zombify(en){
+        var zb = en;
+        var lastToken = tokens.length - 1;
+        for (var i = 0; i < lastToken; i++) {
+            var t = tokens[i];
+            var zb = zb.replace(t.enr, t.zb);
+        }
+        return zb;
+    }
 
-  function unzombify(zb){
-      return zb;
+    function unzombify(zb){
+        var en = zb;
+        var lastToken = tokens.length - 1;
+        for (var i = 0; i < lastToken; i++) {
+            var t = tokens[i];
+            var en = en.replace(t.zbr, t.en);
+        }
+        return en;
 
-  }
+    }
 
 });

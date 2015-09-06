@@ -10,12 +10,15 @@ Notes:
 * Jasmine Tests need to be run with Karma on RequireJS modules.
 
 Bugs:
-*
+* E2Z not capturing all vowels.
+* Z2E only reasonably accurate with spaces surrounding Z-tokens.
 
 Roadmap:
-* Get input to translation functions
-* Set output to input fields
-* Create 10 rules for English to Zombie
+X Get input to translation functions
+X Set output to input fields
+* Error checking
+    *
+> Create 10 rules for English to Zombie
   * lower-case "r" at the end of words replaced with "rh".
   * an "a" or "A" by itself will be replaced with "hra".
   * the starts of sentences are capitalised (the "start of a sentence" is any occurrence of ".!?", followed by a space, followed by a letter.)
@@ -34,5 +37,6 @@ Change History:
     15_09_04_01_00_000: Started source
     15_09_05_01_01_000: Added get and set between the text inputs
     15_09_05_01_02_000: Added routing to translation functions
+    15_09_05_01_03_000: Added initial two-way translation
 
-    git commit -a -m "updated_project_info"; git push origin master
+    git commit -a -m "Added initial two-way translation"; git push origin master
