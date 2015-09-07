@@ -1,17 +1,16 @@
 $(document).ready(function(){
 
-
     var tokens = [
-        { en:'. ',  enr:/(.\s)$/g,    zb:'.!? ',        zbr:/(.!?)\s$/g },
-        { en:'r',   enr:/r$/g,        zb:'rh',          zbr:/(rh)$/g },
-        { en:'r',   enr:/[Rr]/g,        zb:'RR',        zbr:/(RR)/g },
-        { en:'a',   enr:/(\s[Aa]\s)/g,  zb:' hra ',     zbr:/(\s(hra)\s)/g },
-        { en:'u',   enr:/[Uu]/g,        zb:'rrrrRr',    zbr:/(rrrrRr)/g },
-        { en:'o',   enr:/[Oo]/g,        zb:'rrrRr',     zbr:/(rrrRr)/g },
-        { en:'i',   enr:/[Ii]/g,        zb:'rrRr',      zbr:/(rrRr)/g },
-        { en:'e',   enr:/[Ee]/g,        zb:'rr',        zbr:/(rr)/g },
-        { en:'y',   enr:/[Yy]/g,        zb:'mx',        zbr:/(mx)/g },
-        { en:'z',   enr:/[Zz]/g,        zb:'mj',        zbr:/(mj)/g },
+        { en:'. ',  enr:/(.)\s/g,    zb:'.!? ',        zbr:/(.!?)\s/g },
+        { en:'r',   enr:/r$/g,        zb:'mx',          zbr:/(mx)$/g },
+        { en:'a',   enr:/(\s[Aa]\s)/g,  zb:' bk ',     zbr:/(\s(bk)\s)/g },
+        { en:'u',   enr:/[Uu]/g,        zb:'cf',    zbr:/(cf)/g },
+        { en:'o',   enr:/[Oo]/g,        zb:'dx',     zbr:/(dx)/g },
+        { en:'i',   enr:/[Ii]/g,        zb:'gq',      zbr:/(gq)/g },
+        { en:'e',   enr:/[Ee]/g,        zb:'hv',        zbr:/(hv)/g },
+        { en:'y',   enr:/[Yy]/g,        zb:'iy',        zbr:/(iy)/g },
+        { en:'z',   enr:/[Zz]/g,        zb:'jl',        zbr:/(jl)/g },
+        { en:'r',   enr:/[Rr]/g,        zb:'sz',        zbr:/(sz)/g }
     ];
 
     var testStrings = [
@@ -19,11 +18,10 @@ $(document).ready(function(){
         'Add the sum to the product of these three. Thieves who rob friends deserve jail.',
         'The ripe taste of cheese improves with age. Act on these orders with great speed.',
         'The hog crawled under the high fence. Move the vat over the hot fire.',
-        'r a e i o u y z r',
-        'raeiouyzr',
         'Cats and dogs each hate the other. Oak is strong and also gives shade.',
         'The quick brown fox jumped over the lazy dog.',
         'Supercalifragilisticexpialidocious',
+        'r a e i o u y z r. raeiouyzr.'
     ];
 
     /* automated string tests to the console */

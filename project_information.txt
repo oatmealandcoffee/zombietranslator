@@ -10,24 +10,16 @@ Notes:
 * Jasmine Tests need to be run with Karma on RequireJS modules.
 
 Bugs:
-* Translation getting stuck in an endless loop when regex not global
-    * test for location of token
-    * if location != 1, fix the token, capture the location of the fix
-* Unzombify is having a hard time with certain combinations of letter because the regex will replace on the first occurrence and not necessarilly the correct one.
-    * e2z   /[Rr]/g:    break       bRReak  /[Ee]/g:    bRRrrak
-    * z2e   /(RR)/g:    bRRrrak     brrrak  /(rrRr)/g:  berak
-    * e2z   /[Rr]/g:    three       thRRee  /[Ee]/g:    thRRrrrr
-    * z2e   /(RR)/g:    thRRrrrr    thrrrrr /(rr)/g:    theer
+* Standalone a being replaced with grouped a.
+* punctuation not being translated
 
 Roadmap:
 X Get input to translation functions
 X Set output to input fields
-* Error checking
-    * automatic tests of tokens + test strings
-    * string undefined
-    * test string
-        *   'raeiouyzr.'
-        *   '  RR h a rr  rrRr  rrrRr  rrrrRr  rrRhr z  RR h .!? '
+X Simple error checking
+> Bugs
+* May need to go back to old samples for unzombify, and that's hopefully good enough for a decent amount of extra credit
+
 > Create 10 rules for English to Zombie
   * lower-case "r" at the end of words replaced with "rh".
   * an "a" or "A" by itself will be replaced with "hra".
@@ -51,4 +43,6 @@ Change History:
     15_09_05_01_04_000: Added automated two-way translation testing
     15_09_05_01_05_000: Updated regexes in tokens to no longer be global; now stop on first hit; Updated translation to replace individual hits; Fixed translation bugs
     15_09_05_01_05_001: Updated reporting to console to aid testing
-    cd ~/cscie32/zombietranslator; git commit -a -m "Updated reporting to console to aid testing"; git push origin master
+    15_09_05_01_05_002: Updated tokens to be unique to ensure bi-directional translation
+
+    cd ~/cscie32/zombietranslator; git commit -a -m "Updated class notes"; git push origin master
