@@ -44,5 +44,10 @@ Change History:
     15_09_05_01_05_000: Updated regexes in tokens to no longer be global; now stop on first hit; Updated translation to replace individual hits; Fixed translation bugs
     15_09_05_01_05_001: Updated reporting to console to aid testing
     15_09_05_01_05_002: Updated tokens to be unique to ensure bi-directional translation
+    15_09_09_01_06_000: Lots of little updates
+                        Updated punctuation regex to fix bugs
+                        Moved testing code into single function
+                        Moved all code into logical stacks
+                        Added interface code to handle manual entry
 
-    cd ~/cscie32/zombietranslator; git commit -a -m "Updated class notes"; git push origin master
+    cd ~/cscie32/zombietranslator; git commit -a -m "Lots of little updates"; git push origin master
