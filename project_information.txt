@@ -20,7 +20,8 @@ X Get input to translation functions
 X Set output to input fields
 X Simple error checking
 > Bugs
-* May need to go back to old samples for unzombify, and that's hopefully good enough for a decent amount of extra credit
+    * 'ro' -> 'u'
+    * 'ore' -> 'oer'
 
 > Create 10 rules for English to Zombie
   * lower-case "r" at the end of words replaced with "rh".
@@ -53,5 +54,6 @@ Change History:
                         Added interface code to handle manual entry
     15_09_11_01_07_000: Updated rules to revert back to originals per updated assignment
     15_09_11_01_07_001: Fixed a couple unzombify bugs by changing the array order and updating token strings
+    15_09_11_01_07_002: Fixed a couple zombify bugs by updating token strings
 
-    cd ~/cscie32/zombietranslator; git commit -a -m "Updated rules to revert back to originals per updated assignment"; git push origin master
+    cd ~/cscie32/zombietranslator; git commit -a -m "Fixed a couple zombify bugs by updating token strings; translation 95% accurate"; git push origin master

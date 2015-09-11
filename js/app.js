@@ -2,14 +2,14 @@ $(document).ready(function(){
 
     // token order is immutable
     var tokens = [
-        { en:'. ',  enr:/(.\s)$/g,      zb:'.!? ',      zbr:/(.!?)\s$/g },
+        { en:'. ',  enr:/(\.\s)/g,      zb:'.!? ',      zbr:/(\.\!\?\s)/g },
         { en:'r',   enr:/r$/g,          zb:'rh',        zbr:/(rh)$/g },
         { en:'R',   enr:/(RR)/g,        zb:'RR',        zbr:/(RR)/g },
         { en:'e',   enr:/[Ee]/g,        zb:'rr',        zbr:/(rr)/g },
         { en:'i',   enr:/[Ii]/g,        zb:'rrRr',      zbr:/(rrRr)/g },
         { en:'o',   enr:/[Oo]/g,        zb:'rrrRr',     zbr:/(rrrRr)/g },
         { en:'u',   enr:/[Uu]/g,        zb:'rrrrRr',    zbr:/(rrrrRr)/g },
-        { en:' a ',   enr:/(\s[Aa]\s)/g,  zb:' hra ',     zbr:/(\s(hra)\s)/g },
+        { en:' a ', enr:/(\s[Aa]\s)/g,  zb:' hra ',     zbr:/(\s(hra)\s)/g },
         { en:'y',   enr:/[Yy]/g,        zb:'yz',        zbr:/(yz)/g },
         { en:'z',   enr:/[Zz]/g,        zb:'zh',        zbr:/(zh)/g },
     ];
@@ -21,9 +21,20 @@ $(document).ready(function(){
     function test() {
 
         var testStrings = [
-            'Five quacking zephyrs jolt my wax bed. Sphinx of black quartz, judge my vow!',
+            'The quick brown fox jumped over the lazy dog.',
+            'Just keep examining every low bid quoted for zinc etchings.',
+            'How razorback-jumping frogs can level six piqued gymnasts!',
+            'Grumpy wizards make toxic brew for the evil queen and jack.',
             'Bored? Craving a pub quiz fix? Why, just come to the Royal Oak!',
-             'r a e i o u y z r. raeiouyzr.'
+            'Cozy lummox gives smart squid who asks for job pen.',
+            'Amazingly few discotheques provide jukeboxes.',
+            'The quick onyx goblin jumps over the lazy dwarf.',
+            'Woven silk pyjamas exchanged for blue quartz.',
+            'Pack my box with five dozen liquor jugs.',
+            'Jackdaws love my big sphinx of quartz.',
+            'The five boxing wizards jump quickly.',
+            'Five quacking zephyrs jolt my wax bed.',
+            'Sphinx of black quartz, judge my vow!',
         ];
 
          var lastTest = testStrings.length;
