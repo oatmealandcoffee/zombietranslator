@@ -1,16 +1,17 @@
 $(document).ready(function(){
 
+    // token order is immutable
     var tokens = [
-         { en:'. ',  enr:/(\.\s)/g,    zb:'.!? ', zbr:/(\.\!\?\s)/g },
-         { en:'r',   enr:/r$/g, zb:'rh',   zbr:/(rh)$/g },
-         { en:' a ',   enr:/(\s[Aa]\s)/g,  zb:' hra ',     zbr:/(\shra\s)/g },
-         { en:'u',   enr:/[Uu]/g, zb:'rrrrRr',    zbr:/(rrrrRr)/g },
-         { en:'o',   enr:/[Oo]/g, zb:'rrrRr',     zbr:/(rrrRr)/g },
-         { en:'i',   enr:/[Ii]/g, zb:'rrRr',      zbr:/(rrRr)/g },
-         { en:'e',   enr:/[Ee]/g, zb:'rr', zbr:/(rr)/g },
-         { en:'y',   enr:/[Yy]/g, zb:'iy', zbr:/(iy)/g },
-         { en:'z',   enr:/[Zz]/g, zb:'jl', zbr:/(jl)/g },
-         { en:'r',   enr:/[R]/g, zb:'RR', zbr:/(RR)/g }
+        { en:'. ',  enr:/(.\s)$/g,      zb:'.!? ',      zbr:/(.!?)\s$/g },
+        { en:'r',   enr:/r$/g,          zb:'rh',        zbr:/(rh)$/g },
+        { en:'R',   enr:/(RR)/g,        zb:'RR',        zbr:/(RR)/g },
+        { en:'e',   enr:/[Ee]/g,        zb:'rr',        zbr:/(rr)/g },
+        { en:'i',   enr:/[Ii]/g,        zb:'rrRr',      zbr:/(rrRr)/g },
+        { en:'o',   enr:/[Oo]/g,        zb:'rrrRr',     zbr:/(rrrRr)/g },
+        { en:'u',   enr:/[Uu]/g,        zb:'rrrrRr',    zbr:/(rrrrRr)/g },
+        { en:' a ',   enr:/(\s[Aa]\s)/g,  zb:' hra ',     zbr:/(\s(hra)\s)/g },
+        { en:'y',   enr:/[Yy]/g,        zb:'yz',        zbr:/(yz)/g },
+        { en:'z',   enr:/[Zz]/g,        zb:'zh',        zbr:/(zh)/g },
     ];
 
     /* TESTING STACK */
@@ -21,7 +22,7 @@ $(document).ready(function(){
 
         var testStrings = [
             'Five quacking zephyrs jolt my wax bed. Sphinx of black quartz, judge my vow!',
-            'Bored? Craving a pub quiz fix? Why, just come to the Royal Oak!'
+            'Bored? Craving a pub quiz fix? Why, just come to the Royal Oak!',
              'r a e i o u y z r. raeiouyzr.'
         ];
 
@@ -32,15 +33,13 @@ $(document).ready(function(){
              console.log(en);
              var e2z = zombify(en);
              console.log(e2z);
-             console.log('');
              var z2e = unzombify(e2z);
              console.log(z2e);
-             console.log(en);
              console.log('');
          }
     }
 
-    //test();
+    test();
 
     /* CONTROLLER STACK */
 
@@ -65,7 +64,7 @@ $(document).ready(function(){
      });
 
     /* TRANSLATION STACK */
-
+    /* main stack */
     function zombify(en){
          var zb = en;
          var lastToken = tokens.length;
@@ -89,4 +88,28 @@ $(document).ready(function(){
          }
          return en;
     }
+
+    /* rules stack */
+
+    /*
+    Specific rule function for translation
+    str: target string
+    returns string
+    */
+
+
+
+    /* helper stack */
+
+    /*
+    Utility function for handling search and replace
+    str: target string
+    search: regex
+    replace: token string
+    returns string
+    */
+    function translate( str, search, replace ) {
+        return str.replace(search, replace);
+    }
+
 });
