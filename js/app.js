@@ -2,15 +2,15 @@ $(document).ready(function(){
 
     var tokens = [
          { en:'. ',  enr:/(\.\s)/g,    zb:'.!? ', zbr:/(\.\!\?\s)/g },
-         { en:'r',   enr:/r$/g, zb:'mx',   zbr:/(mx)$/g },
-         { en:' a ',   enr:/(\s[Aa]\s)/g,  zb:' bk ',     zbr:/(\sbk\s)/g },
-         { en:'u',   enr:/[Uu]/g, zb:'cf',    zbr:/(cf)/g },
-         { en:'o',   enr:/[Oo]/g, zb:'dx',     zbr:/(dx)/g },
-         { en:'i',   enr:/[Ii]/g, zb:'gq',      zbr:/(gq)/g },
-         { en:'e',   enr:/[Ee]/g, zb:'hv', zbr:/(hv)/g },
+         { en:'r',   enr:/r$/g, zb:'rh',   zbr:/(rh)$/g },
+         { en:' a ',   enr:/(\s[Aa]\s)/g,  zb:' hra ',     zbr:/(\shra\s)/g },
+         { en:'u',   enr:/[Uu]/g, zb:'rrrrRr',    zbr:/(rrrrRr)/g },
+         { en:'o',   enr:/[Oo]/g, zb:'rrrRr',     zbr:/(rrrRr)/g },
+         { en:'i',   enr:/[Ii]/g, zb:'rrRr',      zbr:/(rrRr)/g },
+         { en:'e',   enr:/[Ee]/g, zb:'rr', zbr:/(rr)/g },
          { en:'y',   enr:/[Yy]/g, zb:'iy', zbr:/(iy)/g },
          { en:'z',   enr:/[Zz]/g, zb:'jl', zbr:/(jl)/g },
-         { en:'r',   enr:/[Rr]/g, zb:'sz', zbr:/(sz)/g }
+         { en:'r',   enr:/[R]/g, zb:'RR', zbr:/(RR)/g }
     ];
 
     /* TESTING STACK */
@@ -20,8 +20,8 @@ $(document).ready(function(){
     function test() {
 
         var testStrings = [
-             'Oak is strong and also gives shade. Cats and dogs each hate the other.',
-             'supercalifragilisticexpialidocius',
+            'Five quacking zephyrs jolt my wax bed. Sphinx of black quartz, judge my vow!',
+            'Bored? Craving a pub quiz fix? Why, just come to the Royal Oak!'
              'r a e i o u y z r. raeiouyzr.'
         ];
 
