@@ -17,6 +17,7 @@ Roadmap:
 X Revert back to original rules
 X Refactor rules into seperate functions
 * Migrate to RequireJS
+    * InterfaceModule
 > Bugs
     * translation ~95% accurate
         * 'ro' -> 'u'
@@ -57,5 +58,6 @@ Change History:
     15_09_11_01_07_002: Fixed a couple zombify bugs by updating token strings
     15_09_11_01_07_003: Updated test strings and documented a few translation bugs
     15_09_12_01_08_000: Refactored rules to individual functions per project spec
+    15_09_12_02_00_000: Updated index.html and app.js to use RequireJS
 
-    cd ~/cscie32/zombietranslator; git commit -a -m "Refactored rules to individual functions per project spec"; git push origin master; git status
+    cd ~/cscie32/zombietranslator; git commit -a -m "Updated index.html and app.js to use RequireJS"; git push origin master; git status
