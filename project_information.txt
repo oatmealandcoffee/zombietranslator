@@ -58,4 +58,4 @@ Change History:
     15_09_11_01_07_003: Updated test strings and documented a few translation bugs
     15_09_12_01_08_000: Refactored rules to individual functions per project spec
 
-    cd ~/cscie32/zombietranslator; git commit -a -m "Refactored rules to individual functions per project spec"; git push origin master
+    cd ~/cscie32/zombietranslator; git commit -a -m "Refactored rules to individual functions per project spec"; git push origin master; git status
