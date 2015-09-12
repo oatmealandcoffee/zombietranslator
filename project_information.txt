@@ -15,7 +15,8 @@ Bugs:
 
 Roadmap:
 X Revert back to original rules
-> Refactor rules into seperate functions
+X Refactor rules into seperate functions
+* Migrate to RequireJS
 > Bugs
     * translation ~95% accurate
         * 'ro' -> 'u'
@@ -55,5 +56,6 @@ Change History:
     15_09_11_01_07_001: Fixed a couple unzombify bugs by changing the array order and updating token strings
     15_09_11_01_07_002: Fixed a couple zombify bugs by updating token strings
     15_09_11_01_07_003: Updated test strings and documented a few translation bugs
+    15_09_12_01_08_000: Refactored rules to individual functions per project spec
 
-    cd ~/cscie32/zombietranslator; git commit -a -m "Updated test strings and documented a few translation bugs"; git push origin master
+    cd ~/cscie32/zombietranslator; git commit -a -m "Refactored rules to individual functions per project spec"; git push origin master
