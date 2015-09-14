@@ -58,5 +58,6 @@ Change History:
     15_09_12_01_08_000: Refactored rules to individual functions per project spec
     15_09_12_02_00_000: Updated index.html and app.js to use RequireJS
     15_09_12_02_01_000: Updated translation stack into module
+    15_09_12_02_02_000: Updated view and test stack into external main.js from app.js
 
-    cd ~/cscie32/zombietranslator; git commit -a -m "Updated translation stack into module"; git push origin master; git status
+    cd ~/cscie32/zombietranslator; git commit -a -m "Updated view and test stack into external main.js from app.js"; git push origin master; git status
