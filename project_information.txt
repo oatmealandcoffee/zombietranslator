@@ -10,19 +10,16 @@ Notes:
 * Jasmine Tests need to be run with Karma on RequireJS modules.
 
 Bugs:
-* Standalone a being replaced with grouped a.
-* punctuation not being translated
+* translation ~95% accurate
+    * 'ro' -> 'u'
+    * 'ore' -> 'oer'
+    * 're' -> 'er'
 
 Roadmap:
-X Revert back to original rules
-X Refactor rules into seperate functions
-* Migrate to RequireJS
-    * InterfaceModule
-> Bugs
-    * translation ~95% accurate
-        * 'ro' -> 'u'
-        * 'ore' -> 'oer'
-        * 're' -> 'er'
+* Move each rule into its own module to test individually (per project spec)
+* Create a jasmine test for the entire function
+** Move Zombify into its own module
+** Move Unzombify into its own module.
 
 > Create 10 rules for English to Zombie
   * lower-case "r" at the end of words replaced with "rh".
@@ -60,4 +57,4 @@ Change History:
     15_09_12_01_08_000: Refactored rules to individual functions per project spec
     15_09_12_02_00_000: Updated index.html and app.js to use RequireJS
 
-    cd ~/cscie32/zombietranslator; git commit -a -m "Updated index.html and app.js to use RequireJS"; git push origin master; git status
+    cd ~/cscie32/zombietranslator; git commit -a -m "Updated roadmap"; git push origin master; git status
