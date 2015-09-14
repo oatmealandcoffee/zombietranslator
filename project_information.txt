@@ -16,10 +16,13 @@ Bugs:
     * 're' -> 'er'
 
 Roadmap:
-* Move each rule into its own module to test individually (per project spec)
-* Create a jasmine test for the entire function
-** Move Zombify into its own module
-** Move Unzombify into its own module.
+* Migrate stacks into modules
+** Move translation stack into its own module
+** Move Zombify/Unzombify into its own module
+* Implement Jasmine
+** Create test for Zombify
+** Create test for Unzombify
+** Create an initial test for each rule
 
 > Create 10 rules for English to Zombie
   * lower-case "r" at the end of words replaced with "rh".
