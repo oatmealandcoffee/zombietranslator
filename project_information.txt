@@ -59,5 +59,6 @@ Change History:
     15_09_12_02_00_000: Updated index.html and app.js to use RequireJS
     15_09_12_02_01_000: Updated translation stack into module
     15_09_12_02_02_000: Updated view and test stack into external main.js from app.js
+    15_09_16_03_00_000: Added jasmine testing and specrunner page
 
-    cd ~/cscie32/zombietranslator; git commit -a -m "Updated view and test stack into external main.js from app.js"; git push origin master; git status
+    cd ~/cscie32/zombietranslator; git commit -a -m "Added jasmine testing and specrunner page"; git push origin master; git status
