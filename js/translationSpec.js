@@ -2,8 +2,8 @@ describe("translation suite", function() {
     var tx;
 
     beforeEach(function() {
-        tx = new translation();
-    });
+         tx = new tx();
+     });
 
     it("should perform english-to-zombie translation", function() {
         var en = 'supercalifragilisticexpialidocius';
@@ -19,4 +19,4 @@ describe("translation suite", function() {
 
     });
 
-});
+}); // describe
