@@ -30,23 +30,19 @@ X Update translation object into IIFE
 > Create tests
     X Create test for Zombify
     X Create test for Unzombify
-    * Create 3 different jasmine "expect" methods per rule.
-        * http://jasmine.github.io/2.3/introduction.html
-        * Values
-            * boolean
-            * int
-            * object {a:1, b:2} = {a:1, b:2}
-        * Matchers
+    > Create 3 different jasmine "expect" methods per rule.
+        / http://jasmine.github.io/2.3/introduction.html
+
                             boo int str rgx obj var arr err
-expect.toBe             :   *   *   *
-expect.toMatch          :               *
-expect.toBeDefined      :                   *   *
-expect.toBeUndefined    :                   *   *
-expect.toBeNull         :                       *
-expect.toContain        :                           *
-expect.toBeLessThan     :       *
-expect.toBeGreaterThan  :       *
-expect.toThrow          :                               *
+expect.toBe             :   !x  !x  !x
+expect.toMatch          :               !x
+expect.toBeDefined      :                   !x   !x
+expect.toBeUndefined    :                   !x   !x
+expect.toBeNull         :                       !x
+expect.toContain        :                           !x
+expect.toBeLessThan     :       !x
+expect.toBeGreaterThan  :       !x
+expect.toThrow          :                               !x
 
 
 
@@ -83,5 +79,6 @@ Change History:
     15_09_16_04_02_000: Updated files to establish testing of shared translation code
     15_09_16_04_01_000: Updated tests into multiple suites to address project specs
     15_09_16_04_02_000: Updated test spec to include it statements for all specific rules per project spec
+    15_09_16_04_02_001: Updated rule tests with planned tests
 
-    cd ~/cscie32/zombietranslator; git commit -a -m "Updated test spec to include it statements for all specific rules per project spec"; git push origin master; git status
+    cd ~/cscie32/zombietranslator; git commit -a -m "Updated rule tests with planned tests"; git push origin master; git status
