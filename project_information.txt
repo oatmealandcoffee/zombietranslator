@@ -82,6 +82,6 @@ Change History:
     15_09_16_04_01_001: Fixed path bug in SpecRunner.html to point to RequireJS
     15_09_16_04_02_000: Updated files to establish testing of shared translation code
     15_09_16_04_01_000: Updated tests into multiple suites to address project specs
-    15_09_16_04_02_000: Updated test spec to include `it' statements for all specific rules per project spec
+    15_09_16_04_02_000: Updated test spec to include it statements for all specific rules per project spec
 
-    cd ~/cscie32/zombietranslator; git commit -a -m "Updated test spec to include `it' statements for all specific rules per project spec"; git push origin master; git status
+    cd ~/cscie32/zombietranslator; git commit -a -m "Updated test spec to include it statements for all specific rules per project spec"; git push origin master; git status
