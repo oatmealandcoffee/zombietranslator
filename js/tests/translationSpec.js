@@ -1,16 +1,13 @@
 define(['translation'], function(translation){
 
-    describe("translation suite", function() {
+    describe("general translation suite", function() {
         var tx;
 
         beforeEach(function() {
              tx = new translation();
          });
 
-         it("should do TESTING TESTING ONE TWO THREE", function() {
-             var echo = 'TESTING TESTING ONE TWO THREE';
-             expect(echo).toBe(echo);
-         });
+        /* WHOLE TRANSLATION TESTING */
 
         it("should perform english-to-zombie translation", function() {
             var en = 'supercalifragilisticexpialidocius';
@@ -19,13 +16,26 @@ define(['translation'], function(translation){
         });
 
         it("should perform zombie-to-english translation", function() {
-
+            var en = 'supercalifragilisticexpialidocius';
+            var zb = 'srrrrRrprrrcalrrRrfragrrRrlrrRrstrrRrcrrxprrRralrrRrdrrrRrcrrRrrrrrRrs';
+            expect(tx.unzombify(zb)).toBe(en);
         });
 
-        it("should perform two-way translation", function() {
+    });
 
-        });
+    describe("translation rule suite", function() {
+        var tx;
 
-    }); // describe
+        beforeEach(function() {
+             tx = new translation();
+         });
 
-}); // define
+         it("should translate puncuation", function() {
+             var en = '$%. $%.';
+             var zb = '$%.!? $%.';
+             expect(tx.zombify(en)).toBe(zb);
+         });
+
+    });
+
+});

@@ -64,5 +64,6 @@ Change History:
     15_09_16_04_01_000: Added example Jasmine code to tests/ folder
     15_09_16_04_01_001: Fixed path bug in SpecRunner.html to point to RequireJS
     15_09_16_04_02_000: Updated files to establish testing of shared translation code
+    15_09_16_04_01_000: Updated tests into multiple suites to address project specs
 
     cd ~/cscie32/zombietranslator; git commit -a -m "Updated files to establish testing of shared translation code"; git push origin master; git status
