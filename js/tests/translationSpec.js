@@ -26,8 +26,11 @@ define(['translation'], function(translation){
          // txPunc
          it("should translate \'.\' (period) to \'.!?\'", function() {
              // TODO toBe boolean
-             // TODO toMatch regex
+             expect(typeof tx != 'undefined').toBe(true);
              // TODO toBeDefined tx
+             expect(tx.OC_TOKENS).toBeDefined();
+             // TODO toMatch regex
+             expect(tx.OC_TOKENS['txPunc'].en).toMatch(tx.OC_TOKENS['txPunc'].enr);
          });
          // txLcR
          it("should translate lower-case \'r\' to \'rh\'", function() {

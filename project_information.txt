@@ -80,5 +80,6 @@ Change History:
     15_09_16_04_01_000: Updated tests into multiple suites to address project specs
     15_09_16_04_02_000: Updated test spec to include it statements for all specific rules per project spec
     15_09_16_04_02_001: Updated rule tests with planned tests
+    15_09_16_04_03_000: Added txPunc tests
 
-    cd ~/cscie32/zombietranslator; git commit -a -m "Updated rule tests with planned tests"; git push origin master; git status
+    cd ~/cscie32/zombietranslator; git commit -a -m "Added txPunc tests"; git push origin master; git status
