@@ -61,5 +61,8 @@ Change History:
     15_09_16_03_00_001: Updated translation to IIFE that ultimately failed in RequireJS; reverted to working version
     15_09_16_04_00_000: Updated file locations to start Jasmine integration
     15_09_16_04_00_001: Fixed location-centric bugs due to migration to app/ folder
+    15_09_16_04_01_000: Added example Jasmine code to tests/ folder
+    15_09_16_04_01_001: Fixed path bug in SpecRunner.html to point to RequireJS
+    15_09_16_04_02_000: Updated files to establish testing of shared translation code
 
-    cd ~/cscie32/zombietranslator; git commit -a -m "Fixed location-centric bugs due to migration to app/ folder"; git push origin master; git status
+    cd ~/cscie32/zombietranslator; git commit -a -m "Updated files to establish testing of shared translation code"; git push origin master; git status
