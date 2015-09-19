@@ -1,4 +1,4 @@
-require(['jquery', 'translation'], function($, translation) {
+require(['translation', 'jquery'], function(translation, $) {
 
     $(document).ready(function(){
 

@@ -17,7 +17,8 @@ Bugs:
 
 Roadmap:
 X Migrate stacks into modules
-* Update translation object into IIFE
+X Update translation object into IIFE
+    / Did not work; tx could not be defined
 var person = (function() {
     // private variables
     var age = 25;
@@ -79,5 +80,6 @@ Change History:
     15_09_12_02_01_000: Updated translation stack into module
     15_09_12_02_02_000: Updated view and test stack into external main.js from app.js
     15_09_16_03_00_000: Added jasmine testing and specrunner page
+    15_09_16_03_00_001: Updated translation to IIFE that ultimately failed in RequireJS; reverted to working version
 
-    cd ~/cscie32/zombietranslator; git commit -a -m "Added jasmine testing and specrunner page"; git push origin master; git status
+    cd ~/cscie32/zombietranslator; git commit -a -m "Updated translation to IIFE that ultimately failed in RequireJS; reverted to working version"; git push origin master; git status

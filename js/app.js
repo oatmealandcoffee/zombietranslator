@@ -10,7 +10,7 @@ require.config({
         'bootstrap': 'vendors/bootstrap.min',
     },
     shim: {
-      'bootstrap': ['jquery'],
+      'bootstrap': ['jquery']
     }
 });
 
