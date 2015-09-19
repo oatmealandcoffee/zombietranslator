@@ -2,12 +2,11 @@
 //
 // Configure loading modules from the lib directory,
 require.config({
-    'baseUrl': 'js',
+    'baseUrl': 'js/app',
     'paths': {
         'translation' : 'translation',
-        'translationSpec' : 'translationSpec',
-        'jquery': 'vendors/jquery.min',
-        'bootstrap': 'vendors/bootstrap.min',
+        'jquery': '../vendors/jquery.min',
+        'bootstrap': '../vendors/bootstrap.min',
     },
     shim: {
       'bootstrap': ['jquery']

@@ -72,5 +72,6 @@ Change History:
     15_09_12_02_02_000: Updated view and test stack into external main.js from app.js
     15_09_16_03_00_000: Added jasmine testing and specrunner page
     15_09_16_03_00_001: Updated translation to IIFE that ultimately failed in RequireJS; reverted to working version
+    15_09_16_04_00_000: Updated file locations to start Jasmine integration
 
-    cd ~/cscie32/zombietranslator; git commit -a -m "Updated translation to IIFE that ultimately failed in RequireJS; reverted to working version"; git push origin master; git status
+    cd ~/cscie32/zombietranslator; git commit -a -m "Updated file locations to start Jasmine integration "; git push origin master; git status
