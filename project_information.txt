@@ -20,33 +20,20 @@ X Migrate stacks into modules
 X Update translation object into IIFE
     / Did not work; tx could not be defined
 
-* Implement Jasmine
-* Migrate to framework provided
-    * Move files to new 'app' folder
-    * Test move
-    * Create 'tests' folder
-    * Move spec to tests
+> Implement Jasmine
+> Migrate to framework provided
+    X Move files to new 'app' folder
+    X Test move
+    X Create 'tests' folder
+    X Move spec to tests
     * add spec to require
 * Create tests
     * Create test for Zombify
     * Create test for Unzombify
     * Create an initial test for each rule
-    * Expand tests for each role
-
-> Create 10 rules for English to Zombie
-  * lower-case "r" at the end of words replaced with "rh".
-  * an "a" or "A" by itself will be replaced with "hra".
-  * the starts of sentences are capitalised (the "start of a sentence" is any occurrence of ".!?", followed by a space, followed by a letter.)
-  * "e" or "E" is replaced by "rr"
-  * "i" or "I" is replaced by "rrRr"
-  * "o" or "O" is replaced by "rrrRr"
-  * "u" or "U" is replaced by "rrrrRr"
-  * "r" or "R' is replaced by "RR"
-  * <create new> "y" or "Y" is replaced by "rrRhr"
-  * <create new> "z" or "Z" is replaced by "hh"
-* Create 3 different jasmine "expect" methods per rule.
-  * http://jasmine.github.io/2.3/introduction.html
-* Extra Credit: same as above for Zombie to English
+    * Create 3 different jasmine "expect" methods per rule.
+        * http://jasmine.github.io/2.3/introduction.html
+X Extra Credit: same as above for Zombie to English
 
 Change History:
     15_09_04_01_00_000: Started source
@@ -73,5 +60,6 @@ Change History:
     15_09_16_03_00_000: Added jasmine testing and specrunner page
     15_09_16_03_00_001: Updated translation to IIFE that ultimately failed in RequireJS; reverted to working version
     15_09_16_04_00_000: Updated file locations to start Jasmine integration
+    15_09_16_04_00_001: Fixed location-centric bugs due to migration to app/ folder
 
-    cd ~/cscie32/zombietranslator; git commit -a -m "Updated file locations to start Jasmine integration "; git push origin master; git status
+    cd ~/cscie32/zombietranslator; git commit -a -m "Fixed location-centric bugs due to migration to app/ folder"; git push origin master; git status
