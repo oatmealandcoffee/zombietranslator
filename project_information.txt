@@ -26,13 +26,30 @@ X Update translation object into IIFE
     X Test move
     X Create 'tests' folder
     X Move spec to tests
-    * add spec to require
-* Create tests
-    * Create test for Zombify
-    * Create test for Unzombify
-    * Create an initial test for each rule
+    X add spec to require
+> Create tests
+    X Create test for Zombify
+    X Create test for Unzombify
     * Create 3 different jasmine "expect" methods per rule.
         * http://jasmine.github.io/2.3/introduction.html
+        * Values
+            * boolean
+            * int
+            * object {a:1, b:2} = {a:1, b:2}
+        * Matchers
+                            boo int str rgx obj var arr err
+expect.toBe             :   *   *   *
+expect.toMatch          :               *
+expect.toBeDefined      :                   *   *
+expect.toBeUndefined    :                   *   *
+expect.toBeNull         :                       *
+expect.toContain        :                           *
+expect.toBeLessThan     :       *
+expect.toBeGreaterThan  :       *
+expect.toThrow          :                               *
+
+
+
 X Extra Credit: same as above for Zombie to English
 
 Change History:
@@ -65,5 +82,6 @@ Change History:
     15_09_16_04_01_001: Fixed path bug in SpecRunner.html to point to RequireJS
     15_09_16_04_02_000: Updated files to establish testing of shared translation code
     15_09_16_04_01_000: Updated tests into multiple suites to address project specs
+    15_09_16_04_02_000: Updated test spec to include `it' statements for all specific rules per project spec
 
-    cd ~/cscie32/zombietranslator; git commit -a -m "Updated files to establish testing of shared translation code"; git push origin master; git status
+    cd ~/cscie32/zombietranslator; git commit -a -m "Updated test spec to include `it' statements for all specific rules per project spec"; git push origin master; git status
