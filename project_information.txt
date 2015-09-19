@@ -19,28 +19,19 @@ Roadmap:
 X Migrate stacks into modules
 X Update translation object into IIFE
     / Did not work; tx could not be defined
-var person = (function() {
-    // private variables
-    var age = 25;
-    // private functions
-    function getAge() {
-        return age;
-    }
-    function growOlder() {
-        age++;
-    }
-    // return only those variables and functions needed to be public
-    return {
-        name: "Nicholas",
-        getAge: getAge,
-        growOlder: growOlder };
-    }());
 
 * Implement Jasmine
-** Create test for Zombify
-** Create test for Unzombify
-** Create an initial test for each rule
-** Expand tests for each role
+* Migrate to framework provided
+    * Move files to new 'app' folder
+    * Test move
+    * Create 'tests' folder
+    * Move spec to tests
+    * add spec to require
+* Create tests
+    * Create test for Zombify
+    * Create test for Unzombify
+    * Create an initial test for each rule
+    * Expand tests for each role
 
 > Create 10 rules for English to Zombie
   * lower-case "r" at the end of words replaced with "rh".
