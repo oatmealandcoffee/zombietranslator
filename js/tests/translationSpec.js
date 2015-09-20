@@ -21,6 +21,11 @@ define(['translation'], function(translation){
 
         beforeEach(function() {
              tx = new translation();
+
+             // setup some spying
+              spyOn(tx, 'txBcO');
+              spyOn(tx, 'txLoneA');
+
          });
 
          // txPunc
@@ -60,6 +65,8 @@ define(['translation'], function(translation){
          });
          // txBcI
          it("should translate upper- and lower-case \'I\' to \'rrRr\'", function() {
+
+             // TODO: Need to find something related to translation
              var vals = [0, 1, 2, 3];
              expect(vals).not.toContain(5);
              expect(vals[3]).not.toBeLessThan(vals[2]);
@@ -67,25 +74,49 @@ define(['translation'], function(translation){
          });
          // txBcO
          it("should translate upper- and lower-case \'O\' to \'rrrRr\'", function() {
-             // TODO not.ToThrow
-             // TODO spyOn, toHaveBeenCalled
-             // TODO spyOn, toHaveBeenCalledWith
+
+             // TODO: Need to find something related to translation
+             var f = function () {
+                 return 1 + 1;
+             }
+            expect(f).not.toThrow();
+
+
+             var en = 'Oo';
+             var zb = tx.txBcO( en );
+
+             expect(tx.txBcO).toHaveBeenCalled();
+             expect(tx.txBcO).toHaveBeenCalledWith( en )
          });
          // txBcU
          it("should translate upper- and lower-case \'U\' to \'rrrrRr\'", function() {
-             // TODO toBe int
+             var i;
+             if ( tx.OC_E2Z == true ) {
+                 i = 1;
+             }
+             expect(i).toBe(1);
+             expect(i).not.toBe('undefined');
+
              // TODO spyOn, not.toHaveBeenCalled
-             // TODO spyOn, not.toHaveBeenCalledWith
+
          });
          // txLoneA
          it("should translate standalone upper- and lower-case \'A\' to \'hra\'", function() {
-             // TODO not.toBe int
-             // TODO not.toBe str
+             var en = 'A';
+             var zb = tx.txBcO( en );
+             expect(tx.txLoneA).not.toHaveBeenCalledWith( 42 );
+
+             expect(tx.OC_TOKENS).not.toBe(typeof String);
+
              // TODO toBe int
+             //expect(tx.OC_VERSION).toBe('undefined');
          });
          // txBcY
          it("should translate upper- and lower-case \'Y\' to \'yz\'", function() {
              // TODO toBe str
+             var en = 'Y';
+             var zb = tx.txBcY( en );
+             expect(zb).toBe(typeof String);
              // TODO toBeDefined var
              // TODO toBeUndefined var
          });
