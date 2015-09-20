@@ -52,9 +52,11 @@ define(['translation'], function(translation){
          });
          // txBcE
          it("should translate upper- and lower-case \'E\' to \'rr\'", function() {
-             // TODO not.toMatch regex
-             // TODO not.toBeUndefined tx
-             // TODO toBeNull var
+             expect(tx.OC_TOKENS['txBcE'].en).not.toMatch(tx.OC_TOKENS['txBcE'].zbr);
+             expect(tx).not.toBeUndefined();
+             
+             tx = null;
+             expect(tx).toBeNull();
          });
          // txBcI
          it("should translate upper- and lower-case \'I\' to \'rrRr\'", function() {

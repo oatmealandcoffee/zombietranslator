@@ -82,5 +82,6 @@ Change History:
     15_09_16_04_02_001: Updated rule tests with planned tests
     15_09_16_04_03_000: Added txPunc tests
     15_09_16_04_04_000: Added txLcR and txUcR tests
+    15_09_16_04_05_000: Added txBcE tests
 
-    cd ~/cscie32/zombietranslator; git commit -a -m "Added txLcR and txUcR tests"; git push origin master; git status
+    cd ~/cscie32/zombietranslator; git commit -a -m "Added txBcE tests"; git push origin master; git status
