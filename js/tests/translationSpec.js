@@ -54,15 +54,16 @@ define(['translation'], function(translation){
          it("should translate upper- and lower-case \'E\' to \'rr\'", function() {
              expect(tx.OC_TOKENS['txBcE'].en).not.toMatch(tx.OC_TOKENS['txBcE'].zbr);
              expect(tx).not.toBeUndefined();
-             
+
              tx = null;
              expect(tx).toBeNull();
          });
          // txBcI
          it("should translate upper- and lower-case \'I\' to \'rrRr\'", function() {
-             // TODO not.ToContain array
-             // TODO not.toBeLessThan int
-             // TODO not.toBeGreaterThan int
+             var vals = [0, 1, 2, 3];
+             expect(vals).not.toContain(5);
+             expect(vals[3]).not.toBeLessThan(vals[2]);
+             expect(vals[2]).not.toBeGreaterThan(vals[3]);
          });
          // txBcO
          it("should translate upper- and lower-case \'O\' to \'rrrRr\'", function() {
