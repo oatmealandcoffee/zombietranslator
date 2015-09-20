@@ -25,24 +25,30 @@ define(['translation'], function(translation){
 
          // txPunc
          it("should translate \'.\' (period) to \'.!?\'", function() {
-             // TODO toBe boolean
              expect(typeof tx != 'undefined').toBe(true);
-             // TODO toBeDefined tx
              expect(tx.OC_TOKENS).toBeDefined();
-             // TODO toMatch regex
              expect(tx.OC_TOKENS['txPunc'].en).toMatch(tx.OC_TOKENS['txPunc'].enr);
          });
          // txLcR
          it("should translate lower-case \'r\' to \'rh\'", function() {
-             // TODO not.toBeNull rule result
-             // TODO toContain array
-             // TODO toBeLessThan int
+             expect(tx).not.toBeNull();
+
+             var vals = [1, 2, 3, 4];
+             expect(vals).toContain(2);
+
+             expect(1).toBeLessThan(2);
          });
          // txUcR
          it("should translate upper-case \'R\' to \'RR\'", function() {
-             // TODO toBeGreaterThan int
-             // TODO toThrow
-             // TODO not.ToBe boolean
+             expect(2).toBeGreaterThan(1);
+
+             // TODO: Need to find something related to translation
+             var f = function () {
+                 return a + 1;
+             }
+            expect(f).toThrow();
+
+             expect(tx.OC_Z2E).not.toBe(true);
          });
          // txBcE
          it("should translate upper- and lower-case \'E\' to \'rr\'", function() {
