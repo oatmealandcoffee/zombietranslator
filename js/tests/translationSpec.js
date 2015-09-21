@@ -25,6 +25,7 @@ define(['translation'], function(translation){
              // setup some spying
               spyOn(tx, 'txBcO');
               spyOn(tx, 'txLoneA');
+              spyOn(tx, 'txBcU');
 
          });
 
@@ -38,16 +39,20 @@ define(['translation'], function(translation){
          it("should translate lower-case \'r\' to \'rh\'", function() {
              expect(tx).not.toBeNull();
 
+             // TODO Make specific to translation
              var vals = [1, 2, 3, 4];
              expect(vals).toContain(2);
 
+             // TODO Make specific to translation
              expect(1).toBeLessThan(2);
          });
          // txUcR
          it("should translate upper-case \'R\' to \'RR\'", function() {
+
+             // TODO Make specific to translation
              expect(2).toBeGreaterThan(1);
 
-             // TODO: Need to find something related to translation
+             // TODO Make specific to translation
              var f = function () {
                  return a + 1;
              }
@@ -66,17 +71,19 @@ define(['translation'], function(translation){
          // txBcI
          it("should translate upper- and lower-case \'I\' to \'rrRr\'", function() {
 
-             // TODO: Need to find something related to translation
+             // TODO Make specific to translation --> update version to history
              var vals = [0, 1, 2, 3];
              expect(vals).not.toContain(5);
-             
+             // TODO Make specific to translation --> version
              expect(vals[3]).not.toBeLessThan(vals[2]);
+             // TODO Make specific to translation --> version
              expect(vals[2]).not.toBeGreaterThan(vals[3]);
+
          });
          // txBcO
          it("should translate upper- and lower-case \'O\' to \'rrrRr\'", function() {
 
-            // TODO: Need to find something related to translation
+            // TODO Make specific to translation
             var f = function () {
                 return 1 + 1;
             }
@@ -97,7 +104,7 @@ define(['translation'], function(translation){
              expect(i).toBe(1);
              expect(i).not.toBe('undefined');
 
-             // TODO spyOn, not.toHaveBeenCalled
+             // TODO 
 
          });
          // txLoneA
@@ -113,9 +120,10 @@ define(['translation'], function(translation){
          it("should translate upper- and lower-case \'Y\' to \'yz\'", function() {
              var en = 'Y';
              var zb = tx.txBcY( en );
+             // TODO: Checking the typeof return value of the typeof property is not a test
              expect(typeof zb).toBe(typeof 'string');
-
              expect(typeof zb).not.toBe(typeof Number);
+
              expect(tx.OC_VERSION).toBeDefined();
 
          });

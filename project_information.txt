@@ -32,17 +32,23 @@ X Update translation object into IIFE
     X Create test for Unzombify
     > Create 3 different jasmine "expect" methods per rule.
         / http://jasmine.github.io/2.3/introduction.html
+        * Add rules that address translation as expected (ex: lower-case \'r\' to \'rh\')
+        * Add features to translation module that address edge cases
+            * version history as array
+            * error history as array
 
-                            boo int str rgx obj var arr err
-expect.toBe             :   !x  !x  !x
-expect.toMatch          :               !x
-expect.toBeDefined      :                   !x   !x
-expect.toBeUndefined    :                   !x   !x
-expect.toBeNull         :                       !x
-expect.toContain        :                           !x
-expect.toBeLessThan     :       !x
-expect.toBeGreaterThan  :       !x
-expect.toThrow          :                               !x
+                                boo int str rgx obj var arr err typeof float prop
+expect.toBe                 :   !x  !x          x                !x     x
+expect.toMatch              :               !x
+expect.toBeDefined          :                   !x       !x                  !x
+expect.toBeUndefined        :                   !
+expect.toBeNull             :                   !x
+expect.toContain            :                           x
+expect.toBeLessThan         :       !x
+expect.toBeGreaterThan      :       !x
+expect.toThrow              :                   !x
+expect.toHaveBeenCalled     :                   x
+expect.toHaveBeenCalledWith :                   !x
 
 
 
@@ -87,4 +93,4 @@ Change History:
     15_09_16_04_07_000: Added more tests; some problems remain
     15_09_16_04_08_000: Added up to 29 (twenty-nine) tests; need to make a couple specific to the translation object
 
-    cd ~/cscie32/zombietranslator; git commit -a -m "Added more tests; some problems remain"; git push origin master; git status
+    cd ~/cscie32/zombietranslator; git commit -a -m "Added up to 29 (twenty-nine) tests; need to make a couple specific to the translation object"; git push origin master; git status

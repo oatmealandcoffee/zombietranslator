@@ -9,7 +9,6 @@ define([], function () {
         // place in roadmap where development stopped last
         // used solely for testing; not for translation purposes
         this.OC_VERSION = 1.8;
-
         // transalation direction flags
         this.OC_E2Z = true;
         this.OC_Z2E = false;
