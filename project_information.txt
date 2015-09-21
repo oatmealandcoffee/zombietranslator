@@ -92,5 +92,6 @@ Change History:
     15_09_16_04_06_000: Added txBcI tests
     15_09_16_04_07_000: Added more tests; some problems remain
     15_09_16_04_08_000: Added up to 29 (twenty-nine) tests; need to make a couple specific to the translation object
+    15_09_16_04_09_000: Updated roadmap and comments to point out problem tests
 
-    cd ~/cscie32/zombietranslator; git commit -a -m "Added up to 29 (twenty-nine) tests; need to make a couple specific to the translation object"; git push origin master; git status
+    cd ~/cscie32/zombietranslator; git commit -a -m "Updated roadmap and comments to point out problem tests"; git push origin master; git status
