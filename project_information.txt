@@ -85,5 +85,6 @@ Change History:
     15_09_16_04_05_000: Added txBcE tests
     15_09_16_04_06_000: Added txBcI tests
     15_09_16_04_07_000: Added more tests; some problems remain
+    15_09_16_04_08_000: Added up to 29 (twenty-nine) tests; need to make a couple specific to the translation object
 
     cd ~/cscie32/zombietranslator; git commit -a -m "Added more tests; some problems remain"; git push origin master; git status

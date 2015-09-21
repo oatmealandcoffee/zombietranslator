@@ -69,24 +69,24 @@ define(['translation'], function(translation){
              // TODO: Need to find something related to translation
              var vals = [0, 1, 2, 3];
              expect(vals).not.toContain(5);
+             
              expect(vals[3]).not.toBeLessThan(vals[2]);
              expect(vals[2]).not.toBeGreaterThan(vals[3]);
          });
          // txBcO
          it("should translate upper- and lower-case \'O\' to \'rrrRr\'", function() {
 
-             // TODO: Need to find something related to translation
-             var f = function () {
-                 return 1 + 1;
-             }
+            // TODO: Need to find something related to translation
+            var f = function () {
+                return 1 + 1;
+            }
             expect(f).not.toThrow();
 
+            var en = 'Oo';
+            var zb = tx.txBcO( en );
 
-             var en = 'Oo';
-             var zb = tx.txBcO( en );
-
-             expect(tx.txBcO).toHaveBeenCalled();
-             expect(tx.txBcO).toHaveBeenCalledWith( en )
+            expect(tx.txBcO).toHaveBeenCalled();
+            expect(tx.txBcO).toHaveBeenCalledWith( en )
          });
          // txBcU
          it("should translate upper- and lower-case \'U\' to \'rrrrRr\'", function() {
@@ -106,25 +106,24 @@ define(['translation'], function(translation){
              var zb = tx.txBcO( en );
              expect(tx.txLoneA).not.toHaveBeenCalledWith( 42 );
 
-             expect(tx.OC_TOKENS).not.toBe(typeof String);
-
-             // TODO toBe int
-             //expect(tx.OC_VERSION).toBe('undefined');
+             expect(tx.OC_TOKENS).not.toBe(typeof 'string');
+             expect(tx.OC_VERSION).toBe(1.8);
          });
          // txBcY
          it("should translate upper- and lower-case \'Y\' to \'yz\'", function() {
-             // TODO toBe str
              var en = 'Y';
              var zb = tx.txBcY( en );
-             expect(zb).toBe(typeof String);
-             // TODO toBeDefined var
-             // TODO toBeUndefined var
+             expect(typeof zb).toBe(typeof 'string');
+
+             expect(typeof zb).not.toBe(typeof Number);
+             expect(tx.OC_VERSION).toBeDefined();
+
          });
          // txBcZ
          it("should translate upper- and lower-case \'Z\' to \'zh\'", function() {
-             // TODO toBeGreaterThan int
-             // TODO not.ToBeDefined var
-             // TODO toBe obj
+             expect( tx.foobar ).toBe( undefined );
+             expect( tx.foobar ).not.toBeDefined();
+             expect(typeof tx).toBe('object');
          });
 
     });
