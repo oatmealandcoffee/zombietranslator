@@ -37,14 +37,12 @@ define(['translation'], function(translation){
          });
          // txLcR
          it("should translate lower-case \'r\' to \'rh\'", function() {
+
              expect(tx).not.toBeNull();
 
-             // TODO Make specific to translation
-             var vals = [1, 2, 3, 4];
-             expect(vals).toContain(2);
+             expect(tx).toBeTruthy();
 
-             // TODO Make specific to translation
-             expect(1).toBeLessThan(2);
+             expect(tx.foobar).not.toBeTruthy();
          });
          // txUcR
          it("should translate upper-case \'R\' to \'RR\'", function() {
@@ -104,7 +102,7 @@ define(['translation'], function(translation){
              expect(i).toBe(1);
              expect(i).not.toBe('undefined');
 
-             // TODO 
+             // TODO
 
          });
          // txLoneA
@@ -114,7 +112,8 @@ define(['translation'], function(translation){
              expect(tx.txLoneA).not.toHaveBeenCalledWith( 42 );
 
              expect(tx.OC_TOKENS).not.toBe(typeof 'string');
-             expect(tx.OC_VERSION).toBe(1.8);
+
+             // TODO make test
          });
          // txBcY
          it("should translate upper- and lower-case \'Y\' to \'yz\'", function() {
@@ -124,7 +123,7 @@ define(['translation'], function(translation){
              expect(typeof zb).toBe(typeof 'string');
              expect(typeof zb).not.toBe(typeof Number);
 
-             expect(tx.OC_VERSION).toBeDefined();
+             // TODO make test
 
          });
          // txBcZ

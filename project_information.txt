@@ -43,12 +43,35 @@ expect.toMatch              :               !x
 expect.toBeDefined          :                   !x       !x                  !x
 expect.toBeUndefined        :                   !
 expect.toBeNull             :                   !x
+expect.toBeTruthy           :                   !x
+expect.toBeFalsy            :
 expect.toContain            :                           x
 expect.toBeLessThan         :       !x
 expect.toBeGreaterThan      :       !x
 expect.toThrow              :                   !x
 expect.toHaveBeenCalled     :                   x
 expect.toHaveBeenCalledWith :                   !x
+
+From a TA
+
+My Teaching Assistant told me that, "We want to make sure the rules are not written
+by the undead and aren't just a list of expect(myFunc('i')).toBe('rrRr');" means
+to use the full range of Jasmine matchers :
+
+to(N­ot)­Be( null | true | false )
+to(N­ot)­Equ­al( value )
+to(N­ot)­Mat­ch( regex | string )
+toBe­Def­ine­d()
+toBe­Und­efi­ned()
+toBe­Nul­l()
+toBe­Tru­thy()
+toBe­Fal­sy()
+to(N­ot)­Con­tain( string )
+toBe­Les­sTh­an( number )
+toBe­Gre­ate­rTh­an( number )
+toBe­NaN()
+toBe­Clo­seTo( number, precision )
+toTh­row()
 
 
 
@@ -93,5 +116,6 @@ Change History:
     15_09_16_04_07_000: Added more tests; some problems remain
     15_09_16_04_08_000: Added up to 29 (twenty-nine) tests; need to make a couple specific to the translation object
     15_09_16_04_09_000: Updated roadmap and comments to point out problem tests
+    15_09_16_04_10_000: Added toBeTruthy tests
 
-    cd ~/cscie32/zombietranslator; git commit -a -m "Updated roadmap and comments to point out problem tests"; git push origin master; git status
+    cd ~/cscie32/zombietranslator; git commit -a -m "Added toBeTruthy tests"; git push origin master; git status
