@@ -71,6 +71,8 @@ expect.toHaveBeenCalledWith :                   !x
 // expect( tx.foobar ).not.toBeTruthy();
 // expect( tx.OC_Z2E ).not.toBe( true );
 // expect( tx.OC_TOKENS[ 'txBcE' ].en ).not.toMatch( tx.OC_TOKENS[ 'txBcE' ].zbr );
+// expect( tx.txBcI( 'I' ) ).not.toBeUndefined();
+// expect( tx.txBcI( 'I' ) ).not.toBeFalsy();
 
 From a TA
 
@@ -141,5 +143,6 @@ Change History:
     15_09_16_05_00_000: Updated translation to be completely DRY
     15_09_16_05_01_000: Updated translationSpec to be clean; added expects to 01_txPunc tests
     15_09_16_05_02_000: Added rule token test to all rules; added expects for rules 2 through 4
+    15_09_16_05_03_000: Added all rules in 5; added 2/3 in 6
 
-    cd ~/cscie32/zombietranslator; git commit -a -m "Added rule token test to all rules; added expects for rules 2 through 4"; git push origin master; git status
+    cd ~/cscie32/zombietranslator; git commit -a -m "Added all rules in 5; added 2/3 in 6"; git push origin master; git status

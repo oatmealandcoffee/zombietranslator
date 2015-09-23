@@ -33,7 +33,7 @@ define(['translation'], function(translation){
              var str = tokens.en;
              var zb = tokens.zb;
              var dir = tx.OC_E2Z;
-             expect( tx.translate( str, tokens, dir )).toBe( zb );
+             expect( tx.translate( str, tokens, dir ) ).toBe( zb );
 
              expect( tx.OC_TOKENS ).toBeDefined();
 
@@ -47,7 +47,7 @@ define(['translation'], function(translation){
              var str = tokens.en;
              var zb = tokens.zb;
              var dir = tx.OC_E2Z;
-             expect( tx.translate( str, tokens, dir )).toBe( zb );
+             expect( tx.translate( str, tokens, dir ) ).toBe( zb );
 
              expect( tx ).not.toBeNull();
 
@@ -96,11 +96,9 @@ define(['translation'], function(translation){
              var dir = tx.OC_E2Z;
              expect( tx.translate( str, tokens, dir )).toBe( zb );
 
-             // expect( tx.txBcI( 'I' ) ).not.toBeUndefined();
+            expect( tx.foobar ).not.toBeTruthy();
 
-             // expect( tx.txBcI( 'I' ) ).not.toBeFalsy();
-
-            // expect( tx.foobar ).toBeFalsy();
+            expect( tx.foobar ).toBeFalsy();
 
          });
          // 06_txBcO
@@ -112,18 +110,14 @@ define(['translation'], function(translation){
              var dir = tx.OC_E2Z;
              expect( tx.translate( str, tokens, dir )).toBe( zb );
 
-            // TODO Make specific to translation
             var f = function () {
-                //return tx.txBcO( 'O' );
+                return tx.translate( str, tokens, dir );
             }
-            // expect( f ).not.toThrow();
+            expect( f ).not.toThrow();
 
-            var en = 'Oo';
-            //var zb = tx.txBcO( en );
+            // TODO
 
-            // expect( tx.txBcO ).toHaveBeenCalled();
 
-            // expect( tx.txBcO ).toHaveBeenCalledWith( en );
 
          });
          // 07_txBcU
