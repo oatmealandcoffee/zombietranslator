@@ -175,6 +175,9 @@ define(['translation'], function(translation){
             expect( tx.foobar ).not.toBeDefined();
 
             expect( typeof tx ).toBe( 'object' );
+
+
+
          });
 
     });
