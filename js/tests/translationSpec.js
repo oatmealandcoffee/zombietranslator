@@ -1,6 +1,6 @@
 define(['translation'], function(translation){
 
-    describe("general translation suite", function() {
+    describe("whole translation suite", function() {
         var tx;
 
         beforeEach(function() {
@@ -8,10 +8,13 @@ define(['translation'], function(translation){
          });
 
         it("should perform two-way English-Zombie translation", function() {
+
             var en = 'supercalifragilisticexpialidocius';
             var zb = 'srrrrRrprrrcalrrRrfragrrRrlrrRrstrrRrcrrxprrRralrrRrdrrrRrcrrRrrrrrRrs';
-            expect(tx.zombify(en)).toBe(zb);
-            expect(tx.unzombify(zb)).toBe(en);
+
+            expect( tx.zombify( en ) ).toBe( zb );
+
+            expect( tx.unzombify( zb ) ).toBe( en );
         });
 
     });
@@ -115,9 +118,7 @@ define(['translation'], function(translation){
             }
             expect( f ).not.toThrow();
 
-            // TODO
-
-
+            expect( typeof tokens ).not.toBe( 'string' );
 
          });
          // 07_txBcU
@@ -129,17 +130,9 @@ define(['translation'], function(translation){
              var dir = tx.OC_E2Z;
              expect( tx.translate( str, tokens, dir )).toBe( zb );
 
-             var i;
-             if ( tx.OC_E2Z == true ) {
-                 i = 1;
-             }
-             // expect( i ).toBe(1);
+             expect( tx.OC_E2Z ).not.toBe( 42 );
 
-             // expect( i ).not.toBe('undefined');
-
-             var en = 'Uu';
-             //var zb = tx.txBcU( en );
-             // expect( tx.txBcO ).not.toHaveBeenCalled();
+             expect( tokens.en ).not.toMatch( tokens.zbr );
 
          });
          // 08_txLoneA
@@ -151,13 +144,9 @@ define(['translation'], function(translation){
              var dir = tx.OC_E2Z;
              expect( tx.translate( str, tokens, dir )).toBe( zb );
 
-             var en = 'A';
-             //var zb = tx.txBcO( en );
-             // expect( tx.txLoneA ).not.toHaveBeenCalledWith( 42 );
+             expect( zb ).not.toBe( typeof Number );
 
-             // expect( typeof tx.OC_TOKENS ).not.toBe( 'string' );
-
-             // expect( typeof tx.OC_E2Z ).not.toBe( null );
+             expect( tokens ).not.toContain( {} );
 
          });
          // 09_txBcY
@@ -169,13 +158,9 @@ define(['translation'], function(translation){
              var dir = tx.OC_E2Z;
              expect( tx.translate( str, tokens, dir )).toBe( zb );
 
-             var en = 'Y';
-             //var zb = tx.txBcY( en );
-             // expect( zb ).not.toBe( typeof Number );
+             expect( typeof tx ).not.toBe( 'function' );
 
-             // expect( tx.OC_TOKENS ).not.toContain( {} );
-
-             // expect( typeof tx ).not.toBe( 'function' );
+             expect( tx.foobar ).toBe( undefined );
 
          });
          // 10_txBcZ
@@ -187,11 +172,9 @@ define(['translation'], function(translation){
              var dir = tx.OC_E2Z;
              expect( tx.translate( str, tokens, dir )).toBe( zb );
 
-             // expect( tx.foobar ).toBe( undefined );
+            expect( tx.foobar ).not.toBeDefined();
 
-             // expect( tx.foobar ).not.toBeDefined();
-
-             // expect( typeof tx ).toBe('object');
+            expect( typeof tx ).toBe( 'object' );
          });
 
     });
