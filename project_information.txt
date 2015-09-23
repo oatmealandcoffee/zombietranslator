@@ -38,10 +38,10 @@ X Create tests
             - error history as array
 > Update translation to original array-based solution
     / current version is not DRY; tests need to be modular to test each rule, and translation updated to accomodate that
-    * Update zombify to run rules in sequence
-        * get keys for each of the rules as a function of translation
-    * Update unzombify to run rules in reverse
-    * Remove the separate functions for each rule
+    X Update zombify to run rules in sequence
+        X get keys for each of the rules as a function of translation
+    X Update unzombify to run rules in reverse
+    X Remove the separate functions for each rule
     * Update the it statements to handle real world usages
         * include simple translation test of expect.toBe
         * include two other tests that step outside expect.toBe
@@ -64,6 +64,10 @@ expect.toBeGreaterThan      :       !x
 expect.toThrow              :                   !x
 expect.toHaveBeenCalled     :                   !x
 expect.toHaveBeenCalledWith :                   !x
+
+* unused tests
+
+// expect( typeof tx != 'undefined' ).toBe( true );
 
 From a TA
 
@@ -132,5 +136,6 @@ Change History:
     15_09_16_04_10_000: Added toBeTruthy tests
     15_09_16_04_11_000: Added required number of tests---three per rule---per spec
     15_09_16_05_00_000: Updated translation to be completely DRY
+    15_09_16_05_01_000: Updated translationSpec to be clean; added expects to 01_txPunc tests
 
-    cd ~/cscie32/zombietranslator; git commit -a -m "Updated translation to be completely DRY"; git push origin master; git status
+    cd ~/cscie32/zombietranslator; git commit -a -m "Updated translationSpec to be clean; added expects to 01_txPunc tests"; git push origin master; git status
