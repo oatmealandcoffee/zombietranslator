@@ -24,55 +24,77 @@ define(['translation'], function(translation){
 
          });
 
-         // txPunc
+         // 01_txPunc
          it("should translate \'.\' (period) to \'.!?\'", function() {
 
-             var str = '. ';
-             var zb = '.!? ';
-             var dir = tx.OC_E2Z;
+             // ALL TESTS: test the token itself to be sure it is capturing the
+             // atomic target
              var tokens = tx.OC_TOKENS[ '01_txPunc' ];
-
+             var str = tokens.en;
+             var zb = tokens.zb;
+             var dir = tx.OC_E2Z;
              expect( tx.translate( str, tokens, dir )).toBe( zb );
 
              expect( tx.OC_TOKENS ).toBeDefined();
 
              expect( tokens.en ).toMatch( tokens.enr );
          });
-         // txLcR
+
+         // 02_txLcR
          it("should translate lower-case \'r\' to \'rh\'", function() {
 
-             // expect( tx ).not.toBeNull();
+             var tokens = tx.OC_TOKENS[ '02_txLcR' ];
+             var str = tokens.en;
+             var zb = tokens.zb;
+             var dir = tx.OC_E2Z;
+             expect( tx.translate( str, tokens, dir )).toBe( zb );
 
-             // expect( tx ).toBeTruthy();
+             expect( tx ).not.toBeNull();
 
-             // expect( tx.foobar ).not.toBeTruthy();
+             expect( tx ).toBeTruthy();
+
          });
-         // txUcR
+         // 03_txUcR
          it("should translate upper-case \'R\' to \'RR\'", function() {
 
-             // expect( tx.foobar ).toBeUndefined();
+             var tokens = tx.OC_TOKENS[ '03_txUcR' ];
+             var str = tokens.en;
+             var zb = tokens.zb;
+             var dir = tx.OC_E2Z;
+             expect( tx.translate( str, tokens, dir )).toBe( zb );
+
+             expect( tx.foobar ).toBeUndefined();
 
              var f = function () {
-                 return tx.txUcR( 42 );
+                 return tx.translate( 42 , tokens, dir );
              }
-            // expect( f ).toThrow();
+            expect( f ).toThrow();
 
-             // expect( tx.OC_Z2E ).not.toBe( true );
 
          });
-         // txBcE
+         // 04_txBcE
          it("should translate upper- and lower-case \'E\' to \'rr\'", function() {
 
-             // expect( tx.OC_TOKENS[ 'txBcE' ].en ).not.toMatch( tx.OC_TOKENS[ 'txBcE' ].zbr );
+             var tokens = tx.OC_TOKENS[ '04_txBcE' ];
+             var str = tokens.en;
+             var zb = tokens.zb;
+             var dir = tx.OC_E2Z;
+             expect( tx.translate( str, tokens, dir )).toBe( zb );
 
-             // expect( tx ).not.toBeUndefined();
+             expect( tx ).not.toBeUndefined();
 
              tx = null;
-             // expect( tx ).toBeNull();
+             expect( tx ).toBeNull();
 
          });
-         // txBcI
+         // 05_txBcI
          it("should translate upper- and lower-case \'I\' to \'rrRr\'", function() {
+
+             var tokens = tx.OC_TOKENS[ '05_txBcI' ];
+             var str = tokens.en;
+             var zb = tokens.zb;
+             var dir = tx.OC_E2Z;
+             expect( tx.translate( str, tokens, dir )).toBe( zb );
 
              // expect( tx.txBcI( 'I' ) ).not.toBeUndefined();
 
@@ -81,8 +103,14 @@ define(['translation'], function(translation){
             // expect( tx.foobar ).toBeFalsy();
 
          });
-         // txBcO
+         // 06_txBcO
          it("should translate upper- and lower-case \'O\' to \'rrrRr\'", function() {
+
+             var tokens = tx.OC_TOKENS[ '06_txBcO' ];
+             var str = tokens.en;
+             var zb = tokens.zb;
+             var dir = tx.OC_E2Z;
+             expect( tx.translate( str, tokens, dir )).toBe( zb );
 
             // TODO Make specific to translation
             var f = function () {
@@ -98,8 +126,14 @@ define(['translation'], function(translation){
             // expect( tx.txBcO ).toHaveBeenCalledWith( en );
 
          });
-         // txBcU
+         // 07_txBcU
          it("should translate upper- and lower-case \'U\' to \'rrrrRr\'", function() {
+
+             var tokens = tx.OC_TOKENS[ '07_txBcU' ];
+             var str = tokens.en;
+             var zb = tokens.zb;
+             var dir = tx.OC_E2Z;
+             expect( tx.translate( str, tokens, dir )).toBe( zb );
 
              var i;
              if ( tx.OC_E2Z == true ) {
@@ -114,8 +148,15 @@ define(['translation'], function(translation){
              // expect( tx.txBcO ).not.toHaveBeenCalled();
 
          });
-         // txLoneA
+         // 08_txLoneA
          it("should translate standalone upper- and lower-case \'A\' to \'hra\'", function() {
+
+             var tokens = tx.OC_TOKENS[ '08_txLoneA' ];
+             var str = tokens.en;
+             var zb = tokens.zb;
+             var dir = tx.OC_E2Z;
+             expect( tx.translate( str, tokens, dir )).toBe( zb );
+
              var en = 'A';
              //var zb = tx.txBcO( en );
              // expect( tx.txLoneA ).not.toHaveBeenCalledWith( 42 );
@@ -125,8 +166,15 @@ define(['translation'], function(translation){
              // expect( typeof tx.OC_E2Z ).not.toBe( null );
 
          });
-         // txBcY
+         // 09_txBcY
          it("should translate upper- and lower-case \'Y\' to \'yz\'", function() {
+
+             var tokens = tx.OC_TOKENS[ '09_txBcY' ];
+             var str = tokens.en;
+             var zb = tokens.zb;
+             var dir = tx.OC_E2Z;
+             expect( tx.translate( str, tokens, dir )).toBe( zb );
+
              var en = 'Y';
              //var zb = tx.txBcY( en );
              // expect( zb ).not.toBe( typeof Number );
@@ -136,8 +184,14 @@ define(['translation'], function(translation){
              // expect( typeof tx ).not.toBe( 'function' );
 
          });
-         // txBcZ
+         // 10_txBcZ
          it("should translate upper- and lower-case \'Z\' to \'zh\'", function() {
+
+             var tokens = tx.OC_TOKENS[ '10_txBcZ' ];
+             var str = tokens.en;
+             var zb = tokens.zb;
+             var dir = tx.OC_E2Z;
+             expect( tx.translate( str, tokens, dir )).toBe( zb );
 
              // expect( tx.foobar ).toBe( undefined );
 
