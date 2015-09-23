@@ -27,15 +27,28 @@ X Update translation object into IIFE
     X Create 'tests' folder
     X Move spec to tests
     X add spec to require
-> Create tests
+X Create tests
     X Create test for Zombify
     X Create test for Unzombify
-    > Create 3 different jasmine "expect" methods per rule.
+    X Create 3 different jasmine "expect" methods per rule.
         / http://jasmine.github.io/2.3/introduction.html
-        * Add rules that address translation as expected (ex: lower-case \'r\' to \'rh\')
-        * Add features to translation module that address edge cases
-            * version history as array
-            * error history as array
+        X Add rules that address translation as expected (ex: lower-case \'r\' to \'rh\')
+        - Add features to translation module that address edge cases
+            - version history as array
+            - error history as array
+> Update translation to original array-based solution
+    / current version is not DRY; tests need to be modular to test each rule, and translation updated to accomodate that
+    * Update zombify to run rules in sequence
+        * get keys for each of the rules as a function of translation
+    * Update unzombify to run rules in reverse
+    * Remove the separate functions for each rule
+    * Update the it statements to handle real world usages
+        * include simple translation test of expect.toBe
+        * include two other tests that step outside expect.toBe
+    * Update rule-running to accept a key instead
+* Karma: http://karma-runner.github.io/0.13/intro/installation.html
+
+* Tests
 
                                 boo int str rgx obj var arr err typeof float prop
 expect.toBe                 :   !x  !x          !x              !x     x
@@ -118,4 +131,6 @@ Change History:
     15_09_16_04_09_000: Updated roadmap and comments to point out problem tests
     15_09_16_04_10_000: Added toBeTruthy tests
     15_09_16_04_11_000: Added required number of tests---three per rule---per spec
-    cd ~/cscie32/zombietranslator; git commit -a -m "Added required number of tests---three per rule---per spec"; git push origin master; git status
+    15_09_16_05_00_000: Updated translation to be completely DRY
+
+    cd ~/cscie32/zombietranslator; git commit -a -m "Updated translation to be completely DRY"; git push origin master; git status

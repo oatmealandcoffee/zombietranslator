@@ -11,110 +11,61 @@ define([], function () {
         this.OC_Z2E = false;
 
         // collection of target strings and associated regex for transalation
-        // token order reflects highest accuracy in two-way translation
+        // token order reflects highest accuracy in two-way translation without
+        // resorting to rules about specific spellings or grammars
         this.OC_TOKENS = {
-            'txPunc'    : { en:'. ',  enr:/(\.\s)/g,      zb:'.!? ',      zbr:/(\.\!\?\s)/g },
-            'txLcR'     : { en:'r',   enr:/r$/g,          zb:'rh',        zbr:/(rh)$/g },
-            'txUcR'     : { en:'R',   enr:/(RR)/g,        zb:'RR',        zbr:/(RR)/g },
-            'txBcE'     : { en:'e',   enr:/[Ee]/g,        zb:'rr',        zbr:/(rr)/g },
-            'txBcI'     : { en:'i',   enr:/[Ii]/g,        zb:'rrRr',      zbr:/(rrRr)/g },
-            'txBcO'     : { en:'o',   enr:/[Oo]/g,        zb:'rrrRr',     zbr:/(rrrRr)/g },
-            'txBcU'     : { en:'u',   enr:/[Uu]/g,        zb:'rrrrRr',    zbr:/(rrrrRr)/g },
-            'txLoneA'   : { en:' a ', enr:/(\s[Aa]\s)/g,  zb:' hra ',     zbr:/(\s(hra)\s)/g },
-            'txBcY'     : { en:'y',   enr:/[Yy]/g,        zb:'yz',        zbr:/(yz)/g },
-            'txBcZ'     : { en:'z',   enr:/[Zz]/g,        zb:'zh',        zbr:/(zh)/g },
+            '01_txPunc'    : { en:'. ',  enr:/(\.\s)/g,      zb:'.!? ',      zbr:/(\.\!\?\s)/g },
+            '02_txLcR'     : { en:'r',   enr:/r$/g,          zb:'rh',        zbr:/(rh)$/g },
+            '03_txUcR'     : { en:'R',   enr:/(RR)/g,        zb:'RR',        zbr:/(RR)/g },
+            '04_txBcE'     : { en:'e',   enr:/[Ee]/g,        zb:'rr',        zbr:/(rr)/g },
+            '05_txBcI'     : { en:'i',   enr:/[Ii]/g,        zb:'rrRr',      zbr:/(rrRr)/g },
+            '06_txBcO'     : { en:'o',   enr:/[Oo]/g,        zb:'rrrRr',     zbr:/(rrrRr)/g },
+            '07_txBcU'     : { en:'u',   enr:/[Uu]/g,        zb:'rrrrRr',    zbr:/(rrrrRr)/g },
+            '08_txLoneA'   : { en:' a ', enr:/(\s[Aa]\s)/g,  zb:' hra ',     zbr:/(\s(hra)\s)/g },
+            '09_txBcY'     : { en:'y',   enr:/[Yy]/g,        zb:'yz',        zbr:/(yz)/g },
+            '10_txBcZ'     : { en:'z',   enr:/[Zz]/g,        zb:'zh',        zbr:/(zh)/g },
         };
 
         /* RULES */
 
-        /*
-        Specific rule functions for translation (required per spec)
-        str: target string
-        dir: boolean, true for english-to-zombie, false for zombie-to-english
-        returns string
-        */
-
-        this.txPunc = function txPunc( str, dir ) {
-            var tokens = this.OC_TOKENS['txPunc'];
-            return this.translate( str, tokens, dir );
-        }
-
-        this.txLcR = function txLcR( str, dir ) {
-            var tokens = this.OC_TOKENS['txLcR'];
-            return this.translate( str, tokens, dir );
-        }
-
-        this.txUcR = function txUcR( str, dir ) {
-            var tokens = this.OC_TOKENS['txUcR'];
-            return this.translate( str, tokens, dir );
-        }
-
-        this.txBcE = function txBcE( str, dir ) {
-            var tokens = this.OC_TOKENS['txBcE'];
-            return this.translate( str, tokens, dir );
-        }
-
-        this.txBcI = function txBcI( str, dir ) {
-            var tokens = this.OC_TOKENS['txBcI'];
-            return this.translate( str, tokens, dir );
-        }
-
-        this.txBcO = function txBcO( str, dir ) {
-            var tokens = this.OC_TOKENS['txBcO'];
-            return this.translate( str, tokens, dir );
-        }
-
-        this.txBcU = function txBcU( str, dir ) {
-            var tokens = this.OC_TOKENS['txBcU'];
-            return this.translate( str, tokens, dir );
-        }
-
-        this.txLoneA = function txLoneA( str, dir ) {
-            var tokens = this.OC_TOKENS['txLoneA'];
-            return this.translate( str, tokens, dir );
-        }
-
-        this.txBcY = function txBcY( str, dir ) {
-            var tokens = this.OC_TOKENS['txBcY'];
-            return this.translate( str, tokens, dir );
-        }
-
-        this.txBcZ = function txBcZ( str, dir ) {
-            var tokens = this.OC_TOKENS['txBcZ'];
-            return this.translate( str, tokens, dir );
-        }
         /* MAIN */
 
         // order of operations given in global tokens object
         this.zombify = function (en){
+            // init values
              var str = en;
              var dir = this.OC_E2Z;
-             str = this.txPunc( str , dir );
-             str = this.txLcR( str , dir );
-             str = this.txUcR( str , dir );
-             str = this.txBcE( str , dir );
-             str = this.txBcI( str , dir );
-             str = this.txBcO( str , dir );
-             str = this.txBcU( str , dir );
-             str = this.txLoneA( str , dir );
-             str = this.txBcY( str , dir );
-             str = this.txBcZ( str , dir );
+
+             // get the keys in order
+             var keys = Object.keys( this.OC_TOKENS );
+             keys.sort();
+
+             // execute translation
+             var lastKey = keys.length;
+             for ( var thisKey = 0; thisKey < lastKey; thisKey++ ) {
+                 var key = keys[ thisKey ];
+                 var tokens = this.OC_TOKENS[ key ];
+                 str = this.translate( str, tokens, dir );
+             }
              return str;
         }
 
         this.unzombify = function (zb){
+            // init values
              var str = zb;
              var dir = this.OC_Z2E;
-             str = this.txBcZ( str , dir );
-             str = this.txBcY( str , dir );
-             str = this.txLoneA( str , dir );
-             str = this.txBcU( str , dir );
-             str = this.txBcO( str , dir );
-             str = this.txBcI( str , dir );
-             str = this.txBcE( str , dir );
-             str = this.txUcR( str , dir );
-             str = this.txLcR( str , dir );
-             str = this.txPunc( str , dir );
+
+             // get the keys in order
+             var keys = Object.keys( this.OC_TOKENS );
+             keys.sort();
+
+             // execute translation
+             var lastKey = keys.length - 1;
+             for ( var thisKey = lastKey; thisKey >= 0; thisKey-- ) {
+                 var key = keys[ thisKey ];
+                 var tokens = this.OC_TOKENS[ key ];
+                 str = this.translate( str, tokens, dir );
+             }
              return str;
         }
 
