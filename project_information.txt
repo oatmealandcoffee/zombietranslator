@@ -46,8 +46,11 @@ X Create tests
         * include simple translation test of expect.toBe
         * include two other tests that step outside expect.toBe
     * Update rule-running to accept a key instead
+* Update "A" rule
+* Check translation against new samples in the project spec
 * Karma: http://karma-runner.github.io/0.13/intro/installation.html
-
+    * See class notes for local installation incantation
+    
 * Tests
 
                                 boo int str rgx obj var arr err typeof float prop
