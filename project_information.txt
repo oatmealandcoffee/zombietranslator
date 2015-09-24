@@ -50,7 +50,7 @@ X Create tests
 * Check translation against new samples in the project spec
 * Karma: http://karma-runner.github.io/0.13/intro/installation.html
     * See class notes for local installation incantation
-    
+
 * Tests
 
                                 boo int str rgx obj var arr err typeof float prop
@@ -148,5 +148,5 @@ Change History:
     15_09_16_05_02_000: Added rule token test to all rules; added expects for rules 2 through 4
     15_09_16_05_03_000: Added all rules in 5; added 2/3 in 6
     15_09_16_05_04_000: Updated remaining rules to have some kind of real world application
-
-    cd ~/cscie32/zombietranslator; git commit -a -m "Updated remaining rules to have some kind of real world application"; git push origin master; git status
+    15_09_16_05_05_000: Updated A rule per project spec
+    cd ~/cscie32/zombietranslator; git commit -a -m "Updated A rule per project spec "; git push origin master; git status

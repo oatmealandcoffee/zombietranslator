@@ -16,12 +16,12 @@ define([], function () {
         this.OC_TOKENS = {
             '01_txPunc'    : { en:'. ',  enr:/(\.\s)/g,      zb:'.!? ',      zbr:/(\.\!\?\s)/g },
             '02_txLcR'     : { en:'r',   enr:/r$/g,          zb:'rh',        zbr:/(rh)$/g },
-            '03_txUcR'     : { en:'R',   enr:/(R)/g,        zb:'RR',        zbr:/(RR)/g },
+            '03_txUcR'     : { en:'R',   enr:/(R)/g,         zb:'RR',        zbr:/(RR)/g },
             '04_txBcE'     : { en:'e',   enr:/[Ee]/g,        zb:'rr',        zbr:/(rr)/g },
             '05_txBcI'     : { en:'i',   enr:/[Ii]/g,        zb:'rrRr',      zbr:/(rrRr)/g },
             '06_txBcO'     : { en:'o',   enr:/[Oo]/g,        zb:'rrrRr',     zbr:/(rrrRr)/g },
             '07_txBcU'     : { en:'u',   enr:/[Uu]/g,        zb:'rrrrRr',    zbr:/(rrrrRr)/g },
-            '08_txLoneA'   : { en:' a ', enr:/(\s[Aa]\s)/g,  zb:' hra ',     zbr:/(\s(hra)\s)/g },
+            '08_txLoneA'   : { en:'a',   enr:/[Aa]/g,        zb:'hra',       zbr:/(hra)/g },
             '09_txBcY'     : { en:'y',   enr:/[Yy]/g,        zb:'yz',        zbr:/(yz)/g },
             '10_txBcZ'     : { en:'z',   enr:/[Zz]/g,        zb:'zh',        zbr:/(zh)/g },
         };
