@@ -37,7 +37,7 @@ X Create tests
             - version history as array
             - error history as array
 > Update translation to original array-based solution
-    / current version is not DRY; tests need to be modular to test each rule, and translation updated to accomodate that
+    / current version is not DRY; tests need to be modular to test each rule, and translation updated to accommodate that
     X Update zombify to run rules in sequence
         X get keys for each of the rules as a function of translation
     X Update unzombify to run rules in reverse
@@ -46,12 +46,24 @@ X Create tests
         * include simple translation test of expect.toBe
         * include two other tests that step outside expect.toBe
     * Update rule-running to accept a key instead
-* Update "A" rule
-* Check translation against new samples in the project spec
+X Update "A" rule
+> Check translation against new samples in the project spec
 * Karma: http://karma-runner.github.io/0.13/intro/installation.html
     * See class notes for local installation incantation
 
 * Tests
+
+    * tests are mutually exclusive; Reading the requirements it would be a logical
+    assumption to view an r at the end of a word as a narrower case than that of
+    the general rule of any other r.
+    * So, treat the narrower case first
+    * the custom rules could be used for cleanup
+    * "I made the 'r' rule ignore 'r' at the end of sentences, and let the 'rh'
+    rule take care of those. That gives the 'rh' rule implicit priority. Then I
+    run the 'r' rule before the 'rh' rule so that the 'r' rule doesn't translate
+    the 'r' in 'rh' again. This design makes it easy to test individual rules, and
+    still translates correctly when calling the main translate function."
+
 
                                 boo int str rgx obj var arr err typeof float prop
 expect.toBe                 :   !x  !x          !x              !x     x
