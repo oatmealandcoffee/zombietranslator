@@ -9,8 +9,8 @@ define(['translation'], function(translation){
 
         it("should perform two-way English-Zombie translation", function() {
 
-            var en = 'supercalifragilisticexpialidocius';
-            var zb = 'srrrrRrprrrcalrrRrfragrrRrlrrRrstrrRrcrrxprrRralrrRrdrrrRrcrrRrrrrrRrs';
+            var en = 'Pack my box with five dozen liquor jugs. Jackdaws love my big sphinx of quartz.';
+            var zb = 'Phrack myzh brrrRrx wrrRrth frrRrvrr drrrRrzhrrn lrrRrqrrrrRrrrrRrr jrrrrRrgs.!? Jhrackdhraws lrrrRrvrr myzh brrRrg sphrrRrnx rrrRrf qrrrrRrhrartzh.';
 
             expect( tx.zombify( en ) ).toBe( zb );
 

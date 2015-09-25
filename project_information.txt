@@ -149,4 +149,6 @@ Change History:
     15_09_16_05_03_000: Added all rules in 5; added 2/3 in 6
     15_09_16_05_04_000: Updated remaining rules to have some kind of real world application
     15_09_16_05_05_000: Updated A rule per project spec
-    cd ~/cscie32/zombietranslator; git commit -a -m "Added test string from project spec"; git push origin master; git status
+    15_09_16_06_00_000: Added karma; all tests pass
+
+    cd ~/cscie32/zombietranslator; git commit -a -m "Added karma; all tests pass"; git push origin master; git status
