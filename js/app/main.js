@@ -26,66 +26,6 @@ require(['translation', 'jquery'], function(translation, $) {
            return false;
          });
 
-
-     /* TESTING STACK (PRE-JASMINE) */
-
-     /* automated string tests to the console */
-
-     function test() {
-
-         var testStrings = [
-             'The quick brown fox jumped over the lazy dog. Just keep examining every low bid quoted for zinc etchings.',
-             'How razorback-jumping frogs can level six piqued gymnasts! Grumpy wizards make toxic brew for the evil queen and jack.',
-             'Bored? Craving a pub quiz fix? Why, just come to the Royal Oak!',
-             'Cozy lummox gives smart squid who asks for job pen. Amazingly few discotheques provide jukeboxes.',
-             'The quick onyx goblin jumps over the lazy dwarf. Woven silk pyjamas exchanged for blue quartz.',
-             'Pack my box with five dozen liquor jugs. Jackdaws love my big sphinx of quartz.',
-             'The five boxing wizards jump quickly. Five quacking zephyrs jolt my wax bed.',
-             'Sphinx of black quartz, judge my vow!',
-             'supercalifrajilisticexpialidocious',
-             '~! @ # $%. ^&* ()_+- ={}|[]\\. :\";\'<>?,./',
-             'Terror',
-             'JaZahn',
-             'petty',
-             'pretty',
-             'brains',
-             'onomatopoeia',
-             'This assignment is a holy terror. Please make it stop.'
-         ];
-
-          var lastTest = testStrings.length;
-          for (var i = 0; i < lastTest; i++) {
-              var en = testStrings[i];
-              // two-way translation
-              console.log(en);
-              var e2z = tx.zombify(en);
-              console.log(e2z);
-              var z2e = tx.unzombify(e2z);
-              console.log(z2e);
-              console.log('');
-          }
-     }
-
-     test();
-
-     function sentenceCaseTest () {
-         var testStrings = [
-             "a sentence.",
-             "a sentence. a sentence? a sentence!",
-             "not a sentence",
-             "a sentence...a sentence??? a sentence!!!"
-         ];
-         var lastTest = testStrings.length;
-         for (var i = 0; i < lastTest; i++) {
-             var en = testStrings[i];
-             console.log(en);
-             var str = tx.sentenceCase(en);
-             console.log(str);
-         }
-     }
-
-     // sentenceCaseTest();
-
-}); // jquery
+     }); // jquery
 
 }); // require

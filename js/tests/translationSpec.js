@@ -31,7 +31,6 @@ define(['translation'], function(translation){
 
              // ALL TESTS: test the token itself to be sure it is capturing the
              // atomic target
-
              var tokens = tx.OC_TOKENS[ '01_txnthr' ];
              var str = tokens.en;
              var zb = tokens.zb;
@@ -45,7 +44,6 @@ define(['translation'], function(translation){
 
          it("should translate \'r\'s in words to \'RR\'", function() {
 
-             console.log(tx);
              var tokens = tx.OC_TOKENS[ '02_txWrdr' ];
              var str = tokens.en;
              var zb = tokens.zb;
