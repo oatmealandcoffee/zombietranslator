@@ -137,4 +137,4 @@ Change History:
     15_09_16_07_02_002: Fixed bug where leading 'A' was not being translated
     15_09_16_07_02_003: Fixed whole translation test; Updated translation to switch off debugging logs
 
-    cd ~/cscie32/zombietranslator; git commit -a -m "Updated translation to switch off debugging logs"; git push origin master; git status
+    cd ~/cscie32/zombietranslator; git commit -a -m " Fixed whole translation test; Updated translation to switch off debugging logs"; git push origin master; git status
