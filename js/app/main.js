@@ -64,7 +64,24 @@ require(['translation', 'jquery'], function(translation, $) {
           }
      }
 
-     test();
+     //test();
+
+     function sentenceCaseTest () {
+         var testStrings = [
+             "a sentence.",
+             "a sentence. a sentence? a sentence!",
+             "not a sentence"
+         ];
+         var lastTest = testStrings.length;
+         for (var i = 0; i < lastTest; i++) {
+             var en = testStrings[i];
+             console.log(en);
+             var str = tx.sentenceCase(en);
+             console.log(str);
+         }
+     }
+
+     sentenceCaseTest();
 
 }); // jquery
 
