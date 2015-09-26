@@ -27,12 +27,12 @@ define(['translation'], function(translation){
 
          });
 
-         // 01_txPunc
-         it("should translate \'.\' (period) to \'.!?\'", function() {
+         it("should translate \'r\' at the end of a sentence to \'rh\'", function() {
 
              // ALL TESTS: test the token itself to be sure it is capturing the
              // atomic target
-             var tokens = tx.OC_TOKENS[ '01_txPunc' ];
+
+             var tokens = tx.OC_TOKENS[ '01_txnthr' ];
              var str = tokens.en;
              var zb = tokens.zb;
              var dir = tx.OC_E2Z;
@@ -43,10 +43,10 @@ define(['translation'], function(translation){
              expect( tokens.en ).toMatch( tokens.enr );
          });
 
-         // 02_txLcR
-         it("should translate lower-case \'r\' to \'rh\'", function() {
+         it("should translate \'r\'s in words to \'RR\'", function() {
 
-             var tokens = tx.OC_TOKENS[ '02_txLcR' ];
+             console.log(tx);
+             var tokens = tx.OC_TOKENS[ '02_txWrdr' ];
              var str = tokens.en;
              var zb = tokens.zb;
              var dir = tx.OC_E2Z;
@@ -57,10 +57,10 @@ define(['translation'], function(translation){
              expect( tx ).toBeTruthy();
 
          });
-         // 03_txUcR
-         it("should translate upper-case \'R\' to \'RR\'", function() {
 
-             var tokens = tx.OC_TOKENS[ '03_txUcR' ];
+         it("should translate upper-case \'Ee\' to \'rr\'", function() {
+
+             var tokens = tx.OC_TOKENS[ '03_txBcE' ];
              var str = tokens.en;
              var zb = tokens.zb;
              var dir = tx.OC_E2Z;
@@ -75,10 +75,10 @@ define(['translation'], function(translation){
 
 
          });
-         // 04_txBcE
-         it("should translate upper- and lower-case \'E\' to \'rr\'", function() {
 
-             var tokens = tx.OC_TOKENS[ '04_txBcE' ];
+         it("should translate upper- and lower-case \'Ii\' to \'rrRr\'", function() {
+
+             var tokens = tx.OC_TOKENS[ '04_txBcI' ];
              var str = tokens.en;
              var zb = tokens.zb;
              var dir = tx.OC_E2Z;
@@ -90,10 +90,10 @@ define(['translation'], function(translation){
              expect( tx ).toBeNull();
 
          });
-         // 05_txBcI
-         it("should translate upper- and lower-case \'I\' to \'rrRr\'", function() {
 
-             var tokens = tx.OC_TOKENS[ '05_txBcI' ];
+         it("should translate upper- and lower-case \'Oo\' to \'rrrRr\'", function() {
+
+             var tokens = tx.OC_TOKENS[ '05_txBcO' ];
              var str = tokens.en;
              var zb = tokens.zb;
              var dir = tx.OC_E2Z;
@@ -104,10 +104,10 @@ define(['translation'], function(translation){
             expect( tx.foobar ).toBeFalsy();
 
          });
-         // 06_txBcO
-         it("should translate upper- and lower-case \'O\' to \'rrrRr\'", function() {
 
-             var tokens = tx.OC_TOKENS[ '06_txBcO' ];
+         it("should translate upper- and lower-case \'Uu\' to \'rrrrRr\'", function() {
+
+             var tokens = tx.OC_TOKENS[ '06_txBcU' ];
              var str = tokens.en;
              var zb = tokens.zb;
              var dir = tx.OC_E2Z;
@@ -121,10 +121,10 @@ define(['translation'], function(translation){
             expect( typeof tokens ).not.toBe( 'string' );
 
          });
-         // 07_txBcU
-         it("should translate upper- and lower-case \'U\' to \'rrrrRr\'", function() {
 
-             var tokens = tx.OC_TOKENS[ '07_txBcU' ];
+         it("should translate upper- and lower-case \'Aa\' to \'hra\'", function() {
+
+             var tokens = tx.OC_TOKENS[ '07_txBcA' ];
              var str = tokens.en;
              var zb = tokens.zb;
              var dir = tx.OC_E2Z;
@@ -135,10 +135,10 @@ define(['translation'], function(translation){
              expect( tokens.en ).not.toMatch( tokens.zbr );
 
          });
-         // 08_txLoneA
-         it("should translate standalone upper- and lower-case \'A\' to \'hra\'", function() {
 
-             var tokens = tx.OC_TOKENS[ '08_txLoneA' ];
+         it("should translate standalone upper- and lower-case \'y\' to \'yz\'", function() {
+
+             var tokens = tx.OC_TOKENS[ '08_txBcY' ];
              var str = tokens.en;
              var zb = tokens.zb;
              var dir = tx.OC_E2Z;
@@ -164,13 +164,11 @@ define(['translation'], function(translation){
 
          });
          // 10_txBcZ
-         it("should translate upper- and lower-case \'Z\' to \'zh\'", function() {
+         it("should fix sentence case", function() {
 
-             var tokens = tx.OC_TOKENS[ '10_txBcZ' ];
-             var str = tokens.en;
-             var zb = tokens.zb;
-             var dir = tx.OC_E2Z;
-             expect( tx.translate( str, tokens, dir )).toBe( zb );
+             var src = 'a sentence. a sentence? a sentence!';
+             var tgt = 'A sentence. A sentence? A sentence!';
+             expect( tx.sentenceCase( src ) ).toBe( tgt );
 
             expect( tx.foobar ).not.toBeDefined();
 
