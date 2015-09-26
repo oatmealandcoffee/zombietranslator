@@ -149,10 +149,10 @@ define(['translation'], function(translation){
              expect( tokens ).not.toContain( {} );
 
          });
-         // 09_txBcY
-         it("should translate upper- and lower-case \'Y\' to \'yz\'", function() {
 
-             var tokens = tx.OC_TOKENS[ '09_txBcY' ];
+         it("should translate upper- and lower-case \'Zz\' to \'zh\'", function() {
+
+             var tokens = tx.OC_TOKENS[ '09_txBcZ' ];
              var str = tokens.en;
              var zb = tokens.zb;
              var dir = tx.OC_E2Z;

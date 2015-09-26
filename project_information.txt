@@ -137,4 +137,6 @@ Change History:
     15_09_16_07_02_002: Fixed bug where leading 'A' was not being translated
     15_09_16_07_02_003: Fixed whole translation test; Updated translation to switch off debugging logs
     15_09_16_08_00_000: Updated tests to handle update tokens and rules
-    cd ~/cscie32/zombietranslator; git commit -a -m "Updated tests to handle update tokens and rules"; git push origin master; git status
+    15_09_16_08_00_001: Fixed bug in last Jasmine test to fail
+    
+    cd ~/cscie32/zombietranslator; git commit -a -m "Fixed bug in last Jasmine test to fail"; git push origin master; git status
