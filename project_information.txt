@@ -135,5 +135,6 @@ Change History:
     15_09_16_07_02_000: Updated main translation functions to include sentenceCase rule
     15_09_16_07_02_001: Fixed bug where sentenceCase was not being called correctly in translation object
     15_09_16_07_02_002: Fixed bug where leading 'A' was not being translated
+    15_09_16_07_02_003: Fixed whole translation test; Updated translation to switch off debugging logs
 
-    cd ~/cscie32/zombietranslator; git commit -a -m "Fixed bug where leading 'A' was not being translated"; git push origin master; git status
+    cd ~/cscie32/zombietranslator; git commit -a -m "Updated translation to switch off debugging logs"; git push origin master; git status

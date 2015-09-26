@@ -55,7 +55,7 @@ define([], function () {
             }
             // join the array with '\s' and return
             var result = components.join(' ');
-            console.log( result );
+            //console.log( result );
             return result;
         }
 
@@ -120,7 +120,7 @@ define([], function () {
             }
             // execute translation
             var result = str.replace(search, replace);
-            console.log(search + ' ∆ ' + replace + ': ' + result);
+            //console.log(search + ' ∆ ' + replace + ': ' + result);
             return result;
         }
     }
