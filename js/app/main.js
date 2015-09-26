@@ -42,13 +42,15 @@ require(['translation', 'jquery'], function(translation, $) {
              'Pack my box with five dozen liquor jugs. Jackdaws love my big sphinx of quartz.',
              'The five boxing wizards jump quickly. Five quacking zephyrs jolt my wax bed.',
              'Sphinx of black quartz, judge my vow!',
+             'supercalifrajilisticexpialidocious',
              '~! @ # $%. ^&* ()_+- ={}|[]\\. :\";\'<>?,./',
              'Terror',
              'JaZahn',
              'petty',
              'pretty',
              'brains',
-             'onomatopoeia'
+             'onomatopoeia',
+             'This assignment is a holy terror. Please make it stop.'
          ];
 
           var lastTest = testStrings.length;

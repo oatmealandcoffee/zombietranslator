@@ -10,58 +10,14 @@ Notes:
 * Jasmine Tests need to be run with Karma on RequireJS modules.
 
 Bugs:
-* translation ~95% accurate
-    * 'ro' -> 'u'
-    * 'ore' -> 'oer'
-    * 're' -> 'er'
+*
 
 Roadmap:
-X Migrate stacks into modules
-X Update translation object into IIFE
-    / Did not work; tx could not be defined
-
-> Implement Jasmine
-> Migrate to framework provided
-    X Move files to new 'app' folder
-    X Test move
-    X Create 'tests' folder
-    X Move spec to tests
-    X add spec to require
-X Create tests
-    X Create test for Zombify
-    X Create test for Unzombify
-    X Create 3 different jasmine "expect" methods per rule.
-        / http://jasmine.github.io/2.3/introduction.html
-        X Add rules that address translation as expected (ex: lower-case \'r\' to \'rh\')
-        - Add features to translation module that address edge cases
-            - version history as array
-            - error history as array
-> Update translation to original array-based solution
-    / current version is not DRY; tests need to be modular to test each rule, and translation updated to accommodate that
-    X Update zombify to run rules in sequence
-        X get keys for each of the rules as a function of translation
-    X Update unzombify to run rules in reverse
-    X Remove the separate functions for each rule
-    * Update the it statements to handle real world usages
-        * include simple translation test of expect.toBe
-        * include two other tests that step outside expect.toBe
-    * Update rule-running to accept a key instead
-X Update "A" rule
-> Check translation against new samples in the project spec
-    X Update {'R'∆'RR'} to {'Rr'∆'RR'}
-    X Update {'r' at end of string ∆'rh'} to end of word
-    X {'Rr'∆'RR'} run after {'r' at end of word ∆'rh'}
-    X Update {'Rr'∆'RR'} to not collide with 'rh'
-    * the starts of sentences are capitalized (the "start of a sentence" is any occurrence of ".!?", followed by a space, followed by a letter.)
-        * Update 10_txBcZ to be this rule
-        * Create function 'sentenceCase' that
-            * splits the string at '\s'
-            * if component ends with [.?!] then
-                * ∆ with @@var tgt = src.charAt(0).toUpperCase() + src.substring(1); return tgt;@@
-                * Citation: [[http://forwebonly.com/capitalize-the-first-letter-of-a-string-in-javascript-the-fast-way/]]
-            * join the array with '\s'
-* Karma: http://karma-runner.github.io/0.13/intro/installation.html
-    * See class notes for local installation incantation
+X Bugs
+    X trailing 'r'∆'rh' not being fixed
+    X Starting 'hra'∆'a' not being fixed
+* Update jasmine tests to new tests
+* Check karma still works
 
 * Tests
 
@@ -178,5 +134,6 @@ Change History:
     15_09_16_07_01_000: Added simple test for sentenceCase function
     15_09_16_07_02_000: Updated main translation functions to include sentenceCase rule
     15_09_16_07_02_001: Fixed bug where sentenceCase was not being called correctly in translation object
+    15_09_16_07_02_002: Fixed bug where leading 'A' was not being translated
 
-    cd ~/cscie32/zombietranslator; git commit -a -m "Fixed bug where sentenceCase was not being called correctly in translation object"; git push origin master; git status
+    cd ~/cscie32/zombietranslator; git commit -a -m "Fixed bug where leading 'A' was not being translated"; git push origin master; git status
