@@ -48,6 +48,18 @@ X Create tests
     * Update rule-running to accept a key instead
 X Update "A" rule
 > Check translation against new samples in the project spec
+    X Update {'R'∆'RR'} to {'Rr'∆'RR'}
+    X Update {'r' at end of string ∆'rh'} to end of word
+    X {'Rr'∆'RR'} run after {'r' at end of word ∆'rh'}
+    X Update {'Rr'∆'RR'} to not collide with 'rh'
+    * the starts of sentences are capitalized (the "start of a sentence" is any occurrence of ".!?", followed by a space, followed by a letter.)
+        * Update 10_txBcZ to be this rule
+        * Create function 'sentenceCase' that
+            * splits the string at '\s'
+            * if component ends with [.?!] then
+                * ∆ with @@var tgt = src.charAt(0).toUpperCase() + src.substring(1); return tgt;@@
+                * Citation: [[http://forwebonly.com/capitalize-the-first-letter-of-a-string-in-javascript-the-fast-way/]]
+            * join the array with '\s'
 * Karma: http://karma-runner.github.io/0.13/intro/installation.html
     * See class notes for local installation incantation
 
@@ -162,5 +174,5 @@ Change History:
     15_09_16_05_04_000: Updated remaining rules to have some kind of real world application
     15_09_16_05_05_000: Updated A rule per project spec
     15_09_16_06_00_000: Added karma; all tests pass
-
-    cd ~/cscie32/zombietranslator; git commit -a -m "Added karma; all tests pass"; git push origin master; git status
+    15_09_16_07_00_000: Updated rules to new spec; testing begins
+    cd ~/cscie32/zombietranslator; git commit -a -m "Updated rules to new spec; testing begins"; git push origin master; git status
