@@ -75,7 +75,7 @@ define([], function () {
                  var tokens = this.OC_TOKENS[ key ];
                  str = this.translate( str, tokens, dir );
              }
-             str = tx.sentenceCase( str );
+             str = this.sentenceCase( str );
              return str;
         }
 
@@ -95,7 +95,7 @@ define([], function () {
                  var tokens = this.OC_TOKENS[ key ];
                  str = this.translate( str, tokens, dir );
              }
-             str = tx.sentenceCase( str );
+             str = this.sentenceCase( str );
              return str;
         }
 

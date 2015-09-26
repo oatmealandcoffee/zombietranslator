@@ -27,7 +27,7 @@ require(['translation', 'jquery'], function(translation, $) {
          });
 
 
-     /* TESTING STACK */
+     /* TESTING STACK (PRE-JASMINE) */
 
      /* automated string tests to the console */
 
