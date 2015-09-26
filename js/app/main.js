@@ -64,13 +64,14 @@ require(['translation', 'jquery'], function(translation, $) {
           }
      }
 
-     //test();
+     test();
 
      function sentenceCaseTest () {
          var testStrings = [
              "a sentence.",
              "a sentence. a sentence? a sentence!",
-             "not a sentence"
+             "not a sentence",
+             "a sentence...a sentence??? a sentence!!!"
          ];
          var lastTest = testStrings.length;
          for (var i = 0; i < lastTest; i++) {
@@ -81,7 +82,7 @@ require(['translation', 'jquery'], function(translation, $) {
          }
      }
 
-     sentenceCaseTest();
+     // sentenceCaseTest();
 
 }); // jquery
 

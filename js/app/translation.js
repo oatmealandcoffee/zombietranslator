@@ -33,9 +33,14 @@ define([], function () {
 
         // translation rule that handles sentence case after rules in OC_TOKENS
         // have been run
+        // Does not handle certaint types of ellipses correctly
         this.sentenceCase = function (str) {
             // split str at word boundary '\s' into components
             var components = str.match( /[^\.!\?]+[\.!\?]+/g );
+            // no match
+            if ( !components ) {
+                return str;
+            }
             // check each of the components for sentence tokens
             var lastComponent = components.length;
             for ( var c = 0 ; c < lastComponent ; c++ ) {
@@ -70,7 +75,7 @@ define([], function () {
                  var tokens = this.OC_TOKENS[ key ];
                  str = this.translate( str, tokens, dir );
              }
-             // TODO update to sentence case
+             str = tx.sentenceCase( str );
              return str;
         }
 
@@ -90,7 +95,7 @@ define([], function () {
                  var tokens = this.OC_TOKENS[ key ];
                  str = this.translate( str, tokens, dir );
              }
-             // TODO update to sentence case
+             str = tx.sentenceCase( str );
              return str;
         }
 

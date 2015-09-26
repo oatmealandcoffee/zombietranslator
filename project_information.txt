@@ -176,5 +176,6 @@ Change History:
     15_09_16_06_00_000: Added karma; all tests pass
     15_09_16_07_00_000: Updated rules to new spec; testing begins
     15_09_16_07_01_000: Added simple test for sentenceCase function
+    15_09_16_07_02_000: Updated main translation functions to include sentenceCase rule
 
-    cd ~/cscie32/zombietranslator; git commit -a -m "Added simple test for sentenceCase function"; git push origin master; git status
+    cd ~/cscie32/zombietranslator; git commit -a -m "Updated main translation functions to include sentenceCase rule"; git push origin master; git status
