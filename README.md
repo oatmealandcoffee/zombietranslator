@@ -42,3 +42,23 @@ Individual rules follow:
 
     expect( f ).not.toThrow();
     expect( typeof tokens ).not.toBe( 'string' );
+
+"should translate upper- and lower-case \'Aa\' to \'hra\'"
+
+    expect( tx.OC_E2Z ).not.toBe( 42 );
+    expect( tokens.en ).not.toMatch( tokens.zbr );
+
+"should translate standalone upper- and lower-case \'y\' to \'yz\'"
+
+    expect( zb ).not.toBe( typeof Number );
+    expect( tokens ).not.toContain( {} );
+
+"should translate upper- and lower-case \'Zz\' to \'zh\'"
+
+    expect( typeof tx ).not.toBe( 'function' );
+    expect( tx.foobar ).toBe( undefined );
+
+"should fix sentence case"
+
+    expect( tx.foobar ).not.toBeDefined();
+    expect( typeof tx ).toBe( 'object' );
