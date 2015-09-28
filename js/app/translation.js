@@ -23,16 +23,15 @@ define([], function () {
             '07_txBcA'  : { en:'a', enr:/[Aa]/g, zb:'hra', zbr:/([Hh]ra)/g },
             '08_txBcY'  : { en:'y', enr:/[Yy]/g, zb:'yz', zbr:/(yz)/g },
             '09_txBcZ'  : { en:'z', enr:/[Zz]/g, zb:'zh', zbr:/(zh)/g },
+            // 10th rule for sentence case is the function this.sentenceCase
         };
 
         /* RULES */
 
-        /* MAIN */
-
         // translation rule that handles sentence case after rules in OC_TOKENS
         // have been run
         this.sentenceCase = function (str) {
-            // split str at word boundary '\s' into components
+            // split str at supported punctuation tokens '.', '!', and '?'
             var components = str.match( /[^\.!\?]+[\.!\?]+/g );
             // no match
             if ( !components ) {
@@ -55,7 +54,12 @@ define([], function () {
             return result;
         }
 
-        // order of operations given in global tokens object
+        /* MAIN */
+
+        /*
+        Complete translation functions. Order is governed by the contents of OC_TOKENS
+        Zombify goes in order, and unzombify goes in reverse order
+        */
         this.zombify = function (en){
             // init values
              var str = en;
@@ -104,7 +108,6 @@ define([], function () {
         returns string
         */
         this.translate = function translate( str, tokens, dir ) {
-            // console.log(dir + ': ' + str);
 
             // init to OC_E2Z
             var search = tokens.enr;

@@ -161,7 +161,7 @@ define(['translation'], function(translation){
              expect( tx.foobar ).toBe( undefined );
 
          });
-         // 10_txBcZ
+
          it("should fix sentence case", function() {
 
              var src = 'a sentence. a sentence? a sentence!';
